@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planes y verificación — TicoMarket</title>
+  <meta name="description" content="Planes de TicoMarket para compradores y vendedores: compra gratis, verifica tu identidad y haz crecer tu negocio con Premium. Precios de ejemplo del prototipo.">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="assets/css/fuentes.css">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body class="bg-white">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-brand-700 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Saltar al contenido</a>
+
+  <header id="cabecera" class="sticky top-0 z-40 border-b border-gray-100 bg-white/90 backdrop-blur transition-shadow">
+    <div class="contenedor flex h-20 items-center gap-4">
+      <a href="index.html" class="flex shrink-0 items-center gap-2.5" aria-label="TicoMarket, ir al inicio">
+        <img src="assets/img/logo-icono.png" alt="" width="685" height="540" class="h-11 w-auto sm:h-12">
+        <span class="text-[24px] font-extrabold leading-none tracking-tight sm:text-[26px]">
+          <span class="text-brand-700">Tico</span><span class="text-tico-500">Market</span>
+        </span>
+      </a>
+
+      <form role="search" class="mx-auto hidden w-full max-w-md lg:block">
+        <label for="busqueda-cabecera" class="sr-only">Buscar productos</label>
+        <div class="relative">
+          <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-400" data-icono="search" data-clases="h-4 w-4"></span>
+          <input id="busqueda-cabecera" type="search" class="campo py-2.5 pl-11 pr-24 text-sm" placeholder="Buscar en TicoMarket">
+          <button type="submit" class="btn-verde absolute right-1.5 top-1/2 -translate-y-1/2 px-4 py-2 text-xs">Buscar</button>
+        </div>
+      </form>
+
+      <nav class="ml-auto hidden items-center gap-5 text-sm font-semibold text-ink-700 xl:flex" aria-label="Navegación principal">
+        <a href="catalogo.html" class="transition hover:text-brand-700">Catálogo</a>
+        <a href="seguridad.html" class="transition hover:text-brand-700">Seguridad</a>
+        <a href="planes.html" aria-current="page" class="text-brand-700">Planes</a>
+        <a href="nosotros.html" class="transition hover:text-brand-700">Nosotros</a>
+      </nav>
+
+      <div class="ml-auto hidden items-center gap-2 md:flex xl:ml-0">
+        <div class="relative" data-menu-usuario>
+          <button type="button" data-boton-usuario class="flex h-11 items-center gap-2 rounded-xl border border-gray-200 bg-white pl-1.5 pr-2.5 text-sm font-semibold text-ink-700 transition hover:border-brand-200 hover:bg-brand-50" aria-expanded="false" aria-controls="menu-usuario" aria-haspopup="true" aria-label="Abrir menú de usuario">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+            <span class="hidden md:inline xl:hidden">María</span>
+            <span data-boton-usuario-icono class="text-ink-400 transition-transform" data-icono="chevron" data-clases="h-4 w-4"></span>
+          </button>
+          <div id="menu-usuario" data-panel-usuario class="absolute right-0 top-full z-50 mt-2 hidden w-64 overflow-hidden rounded-2xl border border-gray-100 bg-white p-2 shadow-flotante">
+            <div class="flex items-center gap-2.5 border-b border-gray-100 px-3 pb-3 pt-2">
+              <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+              <div>
+                <p class="text-sm font-bold text-ink-900">María Jiménez</p>
+                <p class="flex items-center gap-1 text-[11px] font-semibold text-tico-700">
+                  <span data-icono="badge-check" data-clases="h-3 w-3"></span>
+                  Cuenta verificada
+                </p>
+              </div>
+            </div>
+            <nav class="mt-1 flex flex-col text-sm" aria-label="Menú de usuario">
+              <a href="transacciones.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-semibold text-brand-700 transition hover:bg-brand-50">
+                <span data-icono="receipt" data-clases="h-4 w-4"></span>
+                Mi panel de transacciones
+              </a>
+              <a href="vendedor.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-medium text-ink-700 transition hover:bg-gray-50 hover:text-brand-700">
+                <span data-icono="store" data-clases="h-4 w-4 text-ink-400"></span>
+                Mi perfil de vendedor
+              </a>
+              <a href="planes.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-medium text-ink-700 transition hover:bg-gray-50 hover:text-brand-700">
+                <span data-icono="sparkles" data-clases="h-4 w-4 text-ink-400"></span>
+                Mis planes
+              </a>
+            </nav>
+            <div class="mt-1 border-t border-gray-100 pt-1">
+              <a href="#" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium text-ink-500 transition hover:bg-gray-50 hover:text-ink-900">
+                <span data-icono="close" data-clases="h-4 w-4"></span>
+                Cerrar sesión
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="publicar.html" class="btn-verde px-4 py-2.5">
+          <span data-icono="plus" data-clases="h-4 w-4"></span>
+          Publicar
+        </a>
+      </div>
+
+      <button id="btn-menu" type="button" class="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 text-brand-700 transition hover:bg-brand-50 md:ml-0 xl:hidden" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+        <span id="icono-menu" data-icono="menu" data-clases="h-6 w-6"></span>
+        <span id="icono-cerrar" class="hidden" data-icono="close" data-clases="h-6 w-6"></span>
+      </button>
+    </div>
+
+    <div id="menu-movil" class="hidden border-t border-gray-100 bg-white px-4 pb-6 pt-4 xl:hidden">
+      <form role="search" class="mb-4">
+        <label for="busqueda-movil" class="sr-only">Buscar productos</label>
+        <div class="relative">
+          <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-400" data-icono="search" data-clases="h-4 w-4"></span>
+          <input id="busqueda-movil" type="search" class="campo py-3 pl-11" placeholder="Buscar en TicoMarket">
+        </div>
+      </form>
+      <nav class="flex flex-col divide-y divide-gray-100 text-sm font-semibold text-ink-700" aria-label="Navegación móvil">
+        <a href="catalogo.html" class="py-3 hover:text-brand-700">Catálogo</a>
+        <a href="seguridad.html" class="py-3 hover:text-brand-700">Seguridad</a>
+        <a href="planes.html" aria-current="page" class="py-3 text-brand-700">Planes</a>
+        <a href="nosotros.html" class="py-3 hover:text-brand-700">Nosotros</a>
+      </nav>
+      <div class="mt-4">
+        <a href="transacciones.html" class="flex items-center gap-3 rounded-xl border border-gray-200 p-3 transition hover:border-brand-200 hover:bg-brand-50">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+          <span class="flex-1">
+            <span class="block text-sm font-bold text-ink-900">María Jiménez</span>
+            <span class="flex items-center gap-1 text-[11px] font-semibold text-tico-700">
+              <span data-icono="badge-check" data-clases="h-3 w-3"></span>
+              Verificada · Mi panel
+            </span>
+          </span>
+          <span data-icono="chevron-right" data-clases="h-4 w-4 text-ink-400"></span>
+        </a>
+        <div class="mt-3 flex flex-col gap-2">
+          <a href="vendedor.html" class="btn-contorno">Mi perfil de vendedor</a>
+          <a href="publicar.html" class="btn-verde">Publicar producto</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="border-b border-gray-100 bg-cielo-suave">
+      <div class="contenedor py-10 sm:py-14">
+        <nav aria-label="Ruta de navegación" class="text-xs font-medium text-ink-500">
+          <ol class="flex flex-wrap items-center gap-2">
+            <li><a href="index.html" class="transition hover:text-brand-700">Inicio</a></li>
+            <li aria-hidden="true" class="text-ink-400">/</li>
+            <li aria-current="page" class="text-ink-900">Planes y verificación</li>
+          </ol>
+        </nav>
+
+        <div class="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-end">
+          <div>
+            <p class="antetitulo">Planes y verificación</p>
+            <h1 class="mt-2 max-w-2xl text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl">
+              Compra gratis. Vende con más confianza.
+            </h1>
+            <p class="mt-3 max-w-2xl text-sm leading-relaxed text-ink-500">
+              Elige cómo proteger tu cuenta: verificación de identidad, herramientas para vender más
+              y acompañamiento cuando lo necesites. Los precios son de ejemplo para este prototipo.
+            </p>
+
+            <div class="mt-6 inline-flex rounded-2xl border border-gray-200 bg-white p-1.5 shadow-sm" role="group" aria-label="Elegir tipo de plan">
+              <button type="button" data-plan-vista="compradores" aria-pressed="true" class="rounded-xl bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition">Para compradores</button>
+              <button type="button" data-plan-vista="vendedores" aria-pressed="false" class="rounded-xl px-5 py-2.5 text-sm font-semibold text-ink-500 transition hover:text-brand-700">Para vendedores</button>
+            </div>
+            <p class="mt-3 text-[11px] text-ink-400">Sin permanencia · Cancela cuando quieras · IVA incluido</p>
+          </div>
+
+          <div class="tarjeta p-5">
+            <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-ink-400">Incluido en todos los planes</p>
+            <ul class="mt-3 space-y-3 text-sm text-ink-700">
+              <li class="flex items-start gap-2.5">
+                <span class="mt-0.5 text-tico-600" data-icono="badge-check" data-clases="h-4 w-4"></span>
+                Verificación de identidad
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="mt-0.5 text-tico-600" data-icono="star" data-clases="h-4 w-4"></span>
+                Reputación y reseñas
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="mt-0.5 text-tico-600" data-icono="receipt" data-clases="h-4 w-4"></span>
+                Evidencias de pago
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="mt-0.5 text-tico-600" data-icono="truck" data-clases="h-4 w-4"></span>
+                Seguimiento de envíos
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 sm:py-16">
+      <div class="contenedor">
+        <div data-plan-panel="compradores">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="antetitulo">Para compradores</p>
+              <h2 class="mt-1 text-2xl font-extrabold tracking-tight text-ink-900">Comprar siempre será gratis</h2>
+              <p class="mt-1 text-sm text-ink-500">Los planes opcionales agregan verificación y protección para compras de mayor valor.</p>
+            </div>
+            <span class="sello w-fit bg-tico-50 text-tico-700">
+              <span data-icono="check" data-clases="h-3.5 w-3.5"></span>
+              0 % de comisión al comprar
+            </span>
+          </div>
+
+          <div class="mt-6 grid gap-5 lg:grid-cols-3">
+            <article class="tarjeta flex flex-col p-6">
+              <div class="flex items-center justify-between gap-3">
+                <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600" data-icono="search" data-clases="h-5 w-5"></span>
+                <span class="sello bg-gray-100 text-ink-500">Siempre gratis</span>
+              </div>
+              <h3 class="mt-4 text-lg font-extrabold tracking-tight text-ink-900">Explora</h3>
+              <p class="text-xs leading-relaxed text-ink-500">Para buscar, consultar y comprar sin costo.</p>
+              <p class="mt-5 flex items-end gap-1">
+                <span class="text-3xl font-extrabold tracking-tight text-ink-900">₡0</span>
+                <span class="pb-1 text-xs text-ink-500">/ siempre</span>
+              </p>
+              <ul class="mt-5 flex-1 space-y-2.5 text-sm text-ink-700">
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Buscar y contactar vendedores</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Guardar favoritos</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Ver reputación y reseñas</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Compra protegida básica</li>
+              </ul>
+              <a href="catalogo.html" class="btn-contorno mt-6 w-full">Empezar gratis</a>
+            </article>
+
+            <article class="relative flex flex-col rounded-2xl border border-brand-300 bg-white p-6 ring-1 ring-brand-100">
+              <span class="absolute right-5 top-0 -translate-y-1/2 rounded-full bg-brand-700 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">Recomendado</span>
+              <div class="flex items-center justify-between gap-3">
+                <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600" data-icono="badge-check" data-clases="h-5 w-5"></span>
+                <span class="text-[11px] font-semibold text-ink-400">Para comprar con respaldo</span>
+              </div>
+              <h3 class="mt-4 text-lg font-extrabold tracking-tight text-ink-900">Verificado</h3>
+              <p class="text-xs leading-relaxed text-ink-500">Tu identidad confirmada y soporte prioritario.</p>
+              <p class="mt-5 flex items-end gap-1">
+                <span class="text-3xl font-extrabold tracking-tight text-ink-900">₡2.500</span>
+                <span class="pb-1 text-xs text-ink-500">/ mes</span>
+              </p>
+              <p class="text-[11px] text-ink-400">Facturado mensualmente</p>
+              <ul class="mt-5 flex-1 space-y-2.5 text-sm text-ink-700">
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Sello de comprador verificado</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Verificación de identidad avanzada</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Historial completo de compras</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Revisión prioritaria de evidencias</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Soporte por correo en 24 h</li>
+              </ul>
+              <button type="button" data-aviso="Prototipo: el plan Verificado se habilitará con el lanzamiento." class="btn-primario mt-6 w-full">Elegir Verificado</button>
+            </article>
+
+            <article class="tarjeta flex flex-col p-6">
+              <div class="flex items-center justify-between gap-3">
+                <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-tico-50 text-tico-600" data-icono="shield" data-clases="h-5 w-5"></span>
+                <span class="sello bg-gray-100 text-ink-500">Compras de alto valor</span>
+              </div>
+              <h3 class="mt-4 text-lg font-extrabold tracking-tight text-ink-900">Protegido</h3>
+              <p class="text-xs leading-relaxed text-ink-500">Acompañamiento cuando la compra es importante.</p>
+              <p class="mt-5 flex items-end gap-1">
+                <span class="text-3xl font-extrabold tracking-tight text-ink-900">₡4.900</span>
+                <span class="pb-1 text-xs text-ink-500">/ mes</span>
+              </p>
+              <p class="text-[11px] text-ink-400">Facturado mensualmente</p>
+              <ul class="mt-5 flex-1 space-y-2.5 text-sm text-ink-700">
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Todo lo del plan Verificado</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Acompañamiento en disputas</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Revisión completa de evidencias</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Alertas de seguridad personalizadas</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Chat de soporte prioritario</li>
+              </ul>
+              <button type="button" data-aviso="Prototipo: el plan Protegido se habilitará con el lanzamiento." class="btn-contorno mt-6 w-full">Elegir Protegido</button>
+            </article>
+          </div>
+        </div>
+
+        <div data-plan-panel="vendedores" class="hidden">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="antetitulo">Para vendedores</p>
+              <h2 class="mt-1 text-2xl font-extrabold tracking-tight text-ink-900">Empieza gratis y crece a tu ritmo</h2>
+              <p class="mt-1 text-sm text-ink-500">Más visibilidad, mejores herramientas y un sello que transmite confianza.</p>
+            </div>
+            <span class="sello w-fit bg-amber-50 text-amber-700">
+              <span data-icono="sparkles" data-clases="h-3.5 w-3.5"></span>
+              0 % de comisión el primer año en planes de pago
+            </span>
+          </div>
+
+          <div class="mt-6 grid gap-5 lg:grid-cols-3">
+            <article class="tarjeta flex flex-col p-6">
+              <div class="flex items-center justify-between gap-3">
+                <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600" data-icono="store" data-clases="h-5 w-5"></span>
+                <span class="sello bg-gray-100 text-ink-500">Siempre gratis</span>
+              </div>
+              <h3 class="mt-4 text-lg font-extrabold tracking-tight text-ink-900">Emprende</h3>
+              <p class="text-xs leading-relaxed text-ink-500">Para dar el primer paso y probar la plataforma.</p>
+              <p class="mt-5 flex items-end gap-1">
+                <span class="text-3xl font-extrabold tracking-tight text-ink-900">₡0</span>
+                <span class="pb-1 text-xs text-ink-500">/ siempre</span>
+              </p>
+              <ul class="mt-5 flex-1 space-y-2.5 text-sm text-ink-700">
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>5 publicaciones activas</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Perfil verificado básico</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Reseñas de compradores</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Estadísticas básicas</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Pagos con evidencia</li>
+              </ul>
+              <a href="publicar.html" class="btn-contorno mt-6 w-full">Publicar gratis</a>
+            </article>
+
+            <article class="relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 p-6 text-white shadow-flotante">
+              <span class="absolute right-5 top-5 rounded-full bg-tico-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">Recomendado</span>
+              <div class="flex items-center justify-between gap-3">
+                <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-tico-300" data-icono="sparkles" data-clases="h-5 w-5"></span>
+              </div>
+              <h3 class="mt-4 text-lg font-extrabold tracking-tight">Premium</h3>
+              <p class="text-xs leading-relaxed text-brand-100">Para vender más y destacar frente a la competencia.</p>
+              <p class="mt-5 flex items-end gap-1">
+                <span class="text-3xl font-extrabold tracking-tight">₡9.900</span>
+                <span class="pb-1 text-xs text-brand-200">/ mes</span>
+              </p>
+              <p class="text-[11px] text-brand-300">2 meses gratis pagando el año completo</p>
+              <ul class="mt-5 flex-1 space-y-2.5 text-sm text-brand-100">
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-300" data-icono="check" data-clases="h-4 w-4"></span>30 publicaciones activas</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-300" data-icono="check" data-clases="h-4 w-4"></span>Sello Premium en el perfil</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-300" data-icono="check" data-clases="h-4 w-4"></span>Prioridad en los resultados</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-300" data-icono="check" data-clases="h-4 w-4"></span>Estadísticas avanzadas</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-300" data-icono="check" data-clases="h-4 w-4"></span>Respuesta destacada</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-300" data-icono="check" data-clases="h-4 w-4"></span>0 % de comisión el primer año</li>
+              </ul>
+              <button type="button" data-aviso="Prototipo: el plan Premium se habilitará con el lanzamiento." class="btn mt-6 w-full bg-white text-brand-800 hover:bg-brand-50">Elegir Premium</button>
+            </article>
+
+            <article class="tarjeta flex flex-col p-6">
+              <div class="flex items-center justify-between gap-3">
+                <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 text-violet-600" data-icono="building" data-clases="h-5 w-5"></span>
+                <span class="sello bg-gray-100 text-ink-500">Para negocios</span>
+              </div>
+              <h3 class="mt-4 text-lg font-extrabold tracking-tight text-ink-900">Negocio</h3>
+              <p class="text-xs leading-relaxed text-ink-500">Para tiendas con equipo y catálogo amplio.</p>
+              <p class="mt-5 flex items-end gap-1">
+                <span class="text-3xl font-extrabold tracking-tight text-ink-900">₡19.900</span>
+                <span class="pb-1 text-xs text-ink-500">/ mes</span>
+              </p>
+              <p class="text-[11px] text-ink-400">Facturado mensualmente</p>
+              <ul class="mt-5 flex-1 space-y-2.5 text-sm text-ink-700">
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Publicaciones ilimitadas</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Hasta 5 usuarios de la cuenta</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Catálogo destacado</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Reportes y exportación</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Asesoría comercial</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>0 % de comisión el primer año</li>
+                <li class="flex items-start gap-2"><span class="mt-0.5 text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>Soporte dedicado</li>
+              </ul>
+              <button type="button" data-aviso="Prototipo: el plan Negocio se habilitará con el lanzamiento." class="btn-contorno mt-6 w-full">Elegir Negocio</button>
+            </article>
+          </div>
+        </div>
+
+        <p class="mt-6 flex items-center justify-center gap-2 text-center text-[11px] text-ink-400">
+          <span class="text-ink-400" data-icono="info" data-clases="h-3.5 w-3.5"></span>
+          Precios de ejemplo en colones. La contratación y los pagos se habilitarán en la versión final.
+        </p>
+      </div>
+    </section>
+
+    <section class="border-y border-gray-100 bg-gray-50/60 py-12 sm:py-16">
+      <div class="contenedor">
+        <div class="max-w-2xl">
+          <p class="antetitulo">Comparación</p>
+          <h2 class="mt-1 text-2xl font-extrabold tracking-tight text-ink-900 sm:text-3xl">Compara los planes</h2>
+          <p class="mt-2 text-sm leading-relaxed text-ink-500">Todo lo que incluye cada nivel, en una sola vista.</p>
+        </div>
+
+        <div data-plan-panel="compradores" class="tarjeta mt-6 overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[640px] text-sm">
+              <caption class="sr-only">Comparación de planes para compradores</caption>
+              <thead>
+                <tr class="border-b border-gray-100">
+                  <th scope="col" class="px-5 py-4 text-left text-[11px] font-bold uppercase tracking-[0.12em] text-ink-400">Característica</th>
+                  <th scope="col" class="px-4 py-4 text-center font-bold text-ink-900">Explora</th>
+                  <th scope="col" class="bg-brand-50/60 px-4 py-4 text-center font-bold text-brand-700">Verificado</th>
+                  <th scope="col" class="px-4 py-4 text-center font-bold text-ink-900">Protegido</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Compras protegidas al mes</th>
+                  <td class="px-4 py-3.5 text-center text-ink-500">3</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">10</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Ilimitadas</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Sello de comprador verificado</th>
+                  <td class="px-4 py-3.5 text-center text-ink-400">—</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">Sí</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Sí</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Historial de compras</th>
+                  <td class="px-4 py-3.5 text-center text-ink-500">30 días</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">Completo</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Completo</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Revisión de evidencias de pago</th>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Básica</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">Prioritaria</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Completa</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Acompañamiento en disputas</th>
+                  <td class="px-4 py-3.5 text-center text-ink-400">—</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">Sí</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Prioritario</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Alertas de seguridad</th>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Sí</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">Sí</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Personalizadas</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Soporte</th>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Centro de ayuda</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">Correo 24 h</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Chat prioritario</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-4 text-left font-bold text-ink-900">Precio mensual</th>
+                  <td class="px-4 py-4 text-center font-extrabold text-ink-900">₡0</td>
+                  <td class="bg-brand-50/40 px-4 py-4 text-center font-extrabold text-brand-700">₡2.500</td>
+                  <td class="px-4 py-4 text-center font-extrabold text-ink-900">₡4.900</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div data-plan-panel="vendedores" class="tarjeta mt-6 hidden overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[640px] text-sm">
+              <caption class="sr-only">Comparación de planes para vendedores</caption>
+              <thead>
+                <tr class="border-b border-gray-100">
+                  <th scope="col" class="px-5 py-4 text-left text-[11px] font-bold uppercase tracking-[0.12em] text-ink-400">Característica</th>
+                  <th scope="col" class="px-4 py-4 text-center font-bold text-ink-900">Emprende</th>
+                  <th scope="col" class="bg-brand-50/60 px-4 py-4 text-center font-bold text-brand-700">Premium</th>
+                  <th scope="col" class="px-4 py-4 text-center font-bold text-ink-900">Negocio</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Publicaciones activas</th>
+                  <td class="px-4 py-3.5 text-center text-ink-500">5</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">30</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Ilimitadas</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Sello en el perfil</th>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Verificado</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">Premium</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Negocio</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Prioridad en resultados</th>
+                  <td class="px-4 py-3.5 text-center text-ink-400">—</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">Sí</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Máxima</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Estadísticas</th>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Básicas</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">Avanzadas</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Reportes y exportación</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Respuesta destacada</th>
+                  <td class="px-4 py-3.5 text-center text-ink-400">—</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">Sí</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Sí</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Usuarios de la cuenta</th>
+                  <td class="px-4 py-3.5 text-center text-ink-500">1</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">1</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Hasta 5</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Comisión por venta</th>
+                  <td class="px-4 py-3.5 text-center text-ink-500">0 %</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">0 % el primer año</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">0 % el primer año</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-700">Soporte</th>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Correo</td>
+                  <td class="bg-brand-50/40 px-4 py-3.5 text-center font-semibold text-ink-900">Prioritario</td>
+                  <td class="px-4 py-3.5 text-center text-ink-500">Dedicado</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-5 py-4 text-left font-bold text-ink-900">Precio mensual</th>
+                  <td class="px-4 py-4 text-center font-extrabold text-ink-900">₡0</td>
+                  <td class="bg-brand-50/40 px-4 py-4 text-center font-extrabold text-brand-700">₡9.900</td>
+                  <td class="px-4 py-4 text-center font-extrabold text-ink-900">₡19.900</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 sm:py-16">
+      <div class="contenedor grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="antetitulo">Verificación de identidad</p>
+          <h2 class="mt-1 text-2xl font-extrabold tracking-tight text-ink-900 sm:text-3xl">La confianza empieza por saber quién está al otro lado</h2>
+          <p class="mt-2 max-w-xl text-sm leading-relaxed text-ink-500">
+            Verificamos la identidad de compradores y vendedores para reducir el fraude.
+            El sello aparece en el perfil y en cada publicación.
+          </p>
+
+          <ol class="mt-6 space-y-5">
+            <li class="flex gap-4">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-700 text-sm font-bold text-white">1</span>
+              <div>
+                <h3 class="text-sm font-bold text-ink-900">Completa tus datos</h3>
+                <p class="mt-0.5 text-xs leading-relaxed text-ink-500">Cédula, selfie y número de teléfono. Todo dentro de TicoMarket.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-700 text-sm font-bold text-white">2</span>
+              <div>
+                <h3 class="text-sm font-bold text-ink-900">Revisamos en 24 a 48 horas</h3>
+                <p class="mt-0.5 text-xs leading-relaxed text-ink-500">Validamos que los datos coincidan y que la cuenta no tenga alertas.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-700 text-sm font-bold text-white">3</span>
+              <div>
+                <h3 class="text-sm font-bold text-ink-900">Recibe el sello</h3>
+                <p class="mt-0.5 text-xs leading-relaxed text-ink-500">El sello de identidad verificada se muestra en tu perfil y en tus anuncios.</p>
+              </div>
+            </li>
+          </ol>
+
+          <button type="button" data-aviso="Prototipo: la verificación de identidad se habilitará en la versión final." class="btn-primario mt-7">
+            <span data-icono="badge-check" data-clases="h-4 w-4"></span>
+            Verificar mi cuenta
+          </button>
+        </div>
+
+        <div class="tarjeta p-6 sm:p-8">
+          <div class="flex items-center gap-2 text-tico-700">
+            <span data-icono="shield" data-clases="h-5 w-5"></span>
+            <h3 class="text-sm font-bold">Qué verificamos</h3>
+          </div>
+          <ul class="mt-4 divide-y divide-gray-100 text-sm">
+            <li class="flex items-start justify-between gap-4 py-3 first:pt-0">
+              <span class="flex items-center gap-2.5 text-ink-700"><span class="text-brand-600" data-icono="badge-check" data-clases="h-4 w-4"></span>Identidad</span>
+              <span class="text-xs text-ink-500">Cédula y selfie</span>
+            </li>
+            <li class="flex items-start justify-between gap-4 py-3">
+              <span class="flex items-center gap-2.5 text-ink-700"><span class="text-brand-600" data-icono="phone" data-clases="h-4 w-4"></span>Contacto</span>
+              <span class="text-xs text-ink-500">Teléfono y correo</span>
+            </li>
+            <li class="flex items-start justify-between gap-4 py-3">
+              <span class="flex items-center gap-2.5 text-ink-700"><span class="text-brand-600" data-icono="map-pin" data-clases="h-4 w-4"></span>Ubicación</span>
+              <span class="text-xs text-ink-500">No se publica</span>
+            </li>
+            <li class="flex items-start justify-between gap-4 py-3 last:pb-0">
+              <span class="flex items-center gap-2.5 text-ink-700"><span class="text-brand-600" data-icono="clock" data-clases="h-4 w-4"></span>Historial</span>
+              <span class="text-xs text-ink-500">Alertas de la cuenta</span>
+            </li>
+          </ul>
+          <div class="mt-4 flex items-start gap-2 rounded-xl bg-gray-50 p-3 text-[11px] leading-relaxed text-ink-500">
+            <span class="mt-0.5 shrink-0 text-tico-600" data-icono="lock" data-clases="h-4 w-4"></span>
+            Tus documentos se cifran y nunca se muestran a otros usuarios. Solo se usan para confirmar tu identidad.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-4">
+      <div class="contenedor">
+        <div class="flex flex-col gap-5 rounded-3xl border border-amber-200 bg-amber-50 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+          <div class="flex items-start gap-4">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-amber-600 shadow-sm" data-icono="shield" data-clases="h-6 w-6"></span>
+            <div>
+              <span class="sello bg-white text-amber-700">Próximamente</span>
+              <h2 class="mt-2 text-lg font-extrabold tracking-tight text-ink-900">Verificación automática de pagos</h2>
+              <p class="mt-1 max-w-2xl text-sm leading-relaxed text-ink-700">
+                Estamos trabajando para verificar automáticamente las transferencias y los pagos
+                por SINPE Móvil. Mientras tanto, cada pago se respalda con su comprobante dentro
+                de la plataforma.
+              </p>
+            </div>
+          </div>
+          <a href="seguridad.html" class="btn-contorno shrink-0">Cómo funciona la protección</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="preguntas" class="scroll-mt-24 py-12 sm:py-16">
+      <div class="contenedor max-w-3xl">
+        <div class="text-center">
+          <p class="antetitulo">Preguntas frecuentes</p>
+          <h2 class="mt-1 text-2xl font-extrabold tracking-tight text-ink-900 sm:text-3xl">Lo que suelen preguntarnos</h2>
+        </div>
+
+        <div class="mt-8 space-y-3">
+          <div class="tarjeta overflow-hidden">
+            <h3>
+              <button type="button" data-acordeon-boton aria-expanded="true" aria-controls="faq-1" class="flex w-full items-center justify-between gap-4 p-5 text-left text-sm font-bold text-brand-700 transition hover:text-brand-800">
+                <span>¿Los precios son reales?</span>
+                <span data-acordeon-icono class="shrink-0 rotate-45 text-brand-600 transition-transform" data-icono="plus" data-clases="h-5 w-5"></span>
+              </button>
+            </h3>
+            <div id="faq-1" class="px-5 pb-5 text-sm leading-relaxed text-ink-500">
+              No. Son precios de ejemplo para el prototipo del plan de negocio. La estructura de planes
+              sí refleja el modelo: acceso gratuito para compradores y suscripciones para vendedores.
+            </div>
+          </div>
+
+          <div class="tarjeta overflow-hidden">
+            <h3>
+              <button type="button" data-acordeon-boton aria-expanded="false" aria-controls="faq-2" class="flex w-full items-center justify-between gap-4 p-5 text-left text-sm font-bold text-ink-900 transition hover:text-brand-700">
+                <span>¿Puedo cambiar o cancelar mi plan?</span>
+                <span data-acordeon-icono class="shrink-0 text-ink-400 transition-transform" data-icono="plus" data-clases="h-5 w-5"></span>
+              </button>
+            </h3>
+            <div id="faq-2" class="hidden px-5 pb-5 text-sm leading-relaxed text-ink-500">
+              Sí. Los planes no tienen permanencia. Puedes cambiar de nivel o cancelar cuando quieras;
+              el cambio se aplica al siguiente ciclo de facturación.
+            </div>
+          </div>
+
+          <div class="tarjeta overflow-hidden">
+            <h3>
+              <button type="button" data-acordeon-boton aria-expanded="false" aria-controls="faq-3" class="flex w-full items-center justify-between gap-4 p-5 text-left text-sm font-bold text-ink-900 transition hover:text-brand-700">
+                <span>¿La verificación de identidad es obligatoria?</span>
+                <span data-acordeon-icono class="shrink-0 text-ink-400 transition-transform" data-icono="plus" data-clases="h-5 w-5"></span>
+              </button>
+            </h3>
+            <div id="faq-3" class="hidden px-5 pb-5 text-sm leading-relaxed text-ink-500">
+              Para comprar no es obligatoria, aunque mejora la confianza. Para vender sí: pedimos
+              verificar la identidad antes de publicar, porque el sello protege a compradores y vendedores.
+            </div>
+          </div>
+
+          <div class="tarjeta overflow-hidden">
+            <h3>
+              <button type="button" data-acordeon-boton aria-expanded="false" aria-controls="faq-4" class="flex w-full items-center justify-between gap-4 p-5 text-left text-sm font-bold text-ink-900 transition hover:text-brand-700">
+                <span>¿Cómo se paga un plan?</span>
+                <span data-acordeon-icono class="shrink-0 text-ink-400 transition-transform" data-icono="plus" data-clases="h-5 w-5"></span>
+              </button>
+            </h3>
+            <div id="faq-4" class="hidden px-5 pb-5 text-sm leading-relaxed text-ink-500">
+              Puedes pagar con transferencia bancaria o SINPE Móvil. La verificación automática
+              de ambos métodos se habilitará en una siguiente etapa; por ahora, cada pago se
+              respalda con su comprobante.
+            </div>
+          </div>
+
+          <div class="tarjeta overflow-hidden">
+            <h3>
+              <button type="button" data-acordeon-boton aria-expanded="false" aria-controls="faq-5" class="flex w-full items-center justify-between gap-4 p-5 text-left text-sm font-bold text-ink-900 transition hover:text-brand-700">
+                <span>¿Qué es la compra protegida?</span>
+                <span data-acordeon-icono class="shrink-0 text-ink-400 transition-transform" data-icono="plus" data-clases="h-5 w-5"></span>
+              </button>
+            </h3>
+            <div id="faq-5" class="hidden px-5 pb-5 text-sm leading-relaxed text-ink-500">
+              Es el respaldo que queda en cada transacción: evidencia del pago, seguimiento del envío
+              y un plazo de 3 días para reportar problemas después de la entrega.
+            </div>
+          </div>
+
+          <div class="tarjeta overflow-hidden">
+            <h3>
+              <button type="button" data-acordeon-boton aria-expanded="false" aria-controls="faq-6" class="flex w-full items-center justify-between gap-4 p-5 text-left text-sm font-bold text-ink-900 transition hover:text-brand-700">
+                <span>¿Hay comisión por vender?</span>
+                <span data-acordeon-icono class="shrink-0 text-ink-400 transition-transform" data-icono="plus" data-clases="h-5 w-5"></span>
+              </button>
+            </h3>
+            <div id="faq-6" class="hidden px-5 pb-5 text-sm leading-relaxed text-ink-500">
+              En este prototipo mostramos 0 % de comisión el primer año en los planes Premium y Negocio.
+              La comisión futura por transacción se definirá antes del lanzamiento.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16 sm:pb-20">
+      <div class="contenedor">
+        <div class="overflow-hidden rounded-3xl bg-gradient-to-br from-brand-900 via-brand-800 to-tico-700 p-8 text-white shadow-flotante sm:p-12">
+          <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div class="max-w-xl">
+              <span class="sello bg-white/10 text-tico-200">
+                <span data-icono="store" data-clases="h-3.5 w-3.5"></span>
+                Para vendedores
+              </span>
+              <h2 class="mt-3 text-2xl font-extrabold tracking-tight sm:text-3xl">¿Listo para vender con confianza?</h2>
+              <p class="mt-2 text-sm leading-relaxed text-brand-100">
+                Publica tu primer producto gratis y activa Premium cuando quieras más visibilidad.
+              </p>
+            </div>
+            <div class="flex shrink-0 flex-wrap gap-2">
+              <a href="publicar.html" class="btn-verde">Publicar producto</a>
+              <a href="catalogo.html" class="btn-claro">Ver el catálogo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-brand-950 text-brand-100">
+    <div class="contenedor grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-3">
+          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1">
+            <img src="assets/img/logo-icono.png" alt="" width="685" height="540" class="h-full w-auto">
+          </span>
+          <span class="text-xl font-extrabold tracking-tight"><span class="text-white">Tico</span><span class="text-tico-400">Market</span></span>
+        </div>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-brand-200">Compra y vende seguro en Costa Rica. Verificación, reputación y seguimiento en cada transacción.</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-[11px] font-semibold">
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">SINPE Móvil</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">Transferencia bancaria</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">Evidencia de pago</span>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">Explorar</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="catalogo.html" class="transition hover:text-white">Catálogo</a></li>
+          <li><a href="publicar.html" class="transition hover:text-white">Publicar producto</a></li>
+          <li><a href="planes.html" class="transition hover:text-white">Planes y verificación</a></li>
+          <li><a href="vendedor.html" class="transition hover:text-white">Perfil de vendedor</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">Confianza</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="seguridad.html" class="transition hover:text-white">Cómo funciona</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Verificación de identidad</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Evidencias de pago</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Consejos de seguridad</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">TicoMarket</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="nosotros.html" class="transition hover:text-white">Sobre nosotros</a></li>
+          <li><a href="nosotros.html" class="transition hover:text-white">Misión y visión</a></li>
+          <li><a href="planes.html#preguntas" class="transition hover:text-white">Preguntas frecuentes</a></li>
+          <li><a href="mailto:hola@ticomarket.cr" class="transition hover:text-white">hola@ticomarket.cr</a></li>
+        </ul>
+        <p class="mt-4 text-xs text-brand-300">San José, Costa Rica</p>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="contenedor flex flex-col items-center justify-between gap-3 py-5 text-xs text-brand-300 sm:flex-row">
+        <p>© <span data-anio>2026</span> TicoMarket. Hecho en Costa Rica.</p>
+        <div class="flex gap-5">
+          <a href="#" class="transition hover:text-white">Términos</a>
+          <a href="#" class="transition hover:text-white">Privacidad</a>
+          <a href="#" class="transition hover:text-white">Cookies</a>
+        </div>
+      </div>
+    </div>
+    <div class="h-1.5 w-full" style="background: linear-gradient(90deg, #0B4EA2 0 33%, #FFFFFF 33% 66%, #CE1126 66% 100%)"></div>
+  </footer>
+
+  <div id="aviso-planes" class="fixed inset-x-4 bottom-4 z-50 mx-auto flex hidden max-w-md items-start gap-3 rounded-2xl bg-ink-900 p-4 text-white shadow-flotante" role="status" aria-live="polite">
+    <span class="mt-0.5 shrink-0 text-tico-300" data-icono="info" data-clases="h-5 w-5"></span>
+    <p id="aviso-planes-texto" class="flex-1 text-xs leading-relaxed">Este es un prototipo: la contratación se habilitará con el lanzamiento.</p>
+    <button id="cerrar-aviso" type="button" class="shrink-0 text-brand-200 transition hover:text-white" aria-label="Cerrar aviso">
+      <span data-icono="close" data-clases="h-4 w-4"></span>
+    </button>
+  </div>
+
+  <script src="assets/js/datos.js"></script>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/paginas.js"></script>
+</body>
+</html>

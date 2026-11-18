@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publicar producto — TicoMarket</title>
+  <meta name="description" content="Publica tu producto en TicoMarket en tres pasos: datos, fotos y entrega. Prototipo visual con vista previa del anuncio.">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="assets/css/fuentes.css">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body class="bg-white">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-brand-700 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Saltar al contenido</a>
+
+  <header id="cabecera" class="sticky top-0 z-40 border-b border-gray-100 bg-white/90 backdrop-blur transition-shadow">
+    <div class="contenedor flex h-20 items-center gap-4">
+      <a href="index.html" class="flex shrink-0 items-center gap-2.5" aria-label="TicoMarket, ir al inicio">
+        <img src="assets/img/logo-icono.png" alt="" width="685" height="540" class="h-11 w-auto sm:h-12">
+        <span class="text-[24px] font-extrabold leading-none tracking-tight sm:text-[26px]">
+          <span class="text-brand-700">Tico</span><span class="text-tico-500">Market</span>
+        </span>
+      </a>
+
+      <form role="search" class="mx-auto hidden w-full max-w-md lg:block">
+        <label for="busqueda-cabecera" class="sr-only">Buscar productos</label>
+        <div class="relative">
+          <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-400" data-icono="search" data-clases="h-4 w-4"></span>
+          <input id="busqueda-cabecera" type="search" class="campo py-2.5 pl-11 pr-24 text-sm" placeholder="Buscar en TicoMarket">
+          <button type="submit" class="btn-verde absolute right-1.5 top-1/2 -translate-y-1/2 px-4 py-2 text-xs">Buscar</button>
+        </div>
+      </form>
+
+      <nav class="ml-auto hidden items-center gap-5 text-sm font-semibold text-ink-700 xl:flex" aria-label="Navegación principal">
+        <a href="catalogo.html" class="transition hover:text-brand-700">Catálogo</a>
+        <a href="seguridad.html" class="transition hover:text-brand-700">Seguridad</a>
+        <a href="planes.html" class="transition hover:text-brand-700">Planes</a>
+        <a href="nosotros.html" class="transition hover:text-brand-700">Nosotros</a>
+      </nav>
+
+      <div class="ml-auto hidden items-center gap-2 md:flex xl:ml-0">
+        <div class="relative" data-menu-usuario>
+          <button type="button" data-boton-usuario class="flex h-11 items-center gap-2 rounded-xl border border-gray-200 bg-white pl-1.5 pr-2.5 text-sm font-semibold text-ink-700 transition hover:border-brand-200 hover:bg-brand-50" aria-expanded="false" aria-controls="menu-usuario" aria-haspopup="true" aria-label="Abrir menú de usuario">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+            <span class="hidden md:inline xl:hidden">María</span>
+            <span data-boton-usuario-icono class="text-ink-400 transition-transform" data-icono="chevron" data-clases="h-4 w-4"></span>
+          </button>
+          <div id="menu-usuario" data-panel-usuario class="absolute right-0 top-full z-50 mt-2 hidden w-64 overflow-hidden rounded-2xl border border-gray-100 bg-white p-2 shadow-flotante">
+            <div class="flex items-center gap-2.5 border-b border-gray-100 px-3 pb-3 pt-2">
+              <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+              <div>
+                <p class="text-sm font-bold text-ink-900">María Jiménez</p>
+                <p class="flex items-center gap-1 text-[11px] font-semibold text-tico-700">
+                  <span data-icono="badge-check" data-clases="h-3 w-3"></span>
+                  Cuenta verificada
+                </p>
+              </div>
+            </div>
+            <nav class="mt-1 flex flex-col text-sm" aria-label="Menú de usuario">
+              <a href="transacciones.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-semibold text-brand-700 transition hover:bg-brand-50">
+                <span data-icono="receipt" data-clases="h-4 w-4"></span>
+                Mi panel de transacciones
+              </a>
+              <a href="vendedor.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-medium text-ink-700 transition hover:bg-gray-50 hover:text-brand-700">
+                <span data-icono="store" data-clases="h-4 w-4 text-ink-400"></span>
+                Mi perfil de vendedor
+              </a>
+              <a href="planes.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-medium text-ink-700 transition hover:bg-gray-50 hover:text-brand-700">
+                <span data-icono="sparkles" data-clases="h-4 w-4 text-ink-400"></span>
+                Mis planes
+              </a>
+            </nav>
+            <div class="mt-1 border-t border-gray-100 pt-1">
+              <a href="#" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium text-ink-500 transition hover:bg-gray-50 hover:text-ink-900">
+                <span data-icono="close" data-clases="h-4 w-4"></span>
+                Cerrar sesión
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="publicar.html" aria-current="page" class="btn-verde px-4 py-2.5">
+          <span data-icono="plus" data-clases="h-4 w-4"></span>
+          Publicar
+        </a>
+      </div>
+
+      <button id="btn-menu" type="button" class="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 text-brand-700 transition hover:bg-brand-50 md:ml-0 xl:hidden" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+        <span id="icono-menu" data-icono="menu" data-clases="h-6 w-6"></span>
+        <span id="icono-cerrar" class="hidden" data-icono="close" data-clases="h-6 w-6"></span>
+      </button>
+    </div>
+
+    <div id="menu-movil" class="hidden border-t border-gray-100 bg-white px-4 pb-6 pt-4 xl:hidden">
+      <form role="search" class="mb-4">
+        <label for="busqueda-movil" class="sr-only">Buscar productos</label>
+        <div class="relative">
+          <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-400" data-icono="search" data-clases="h-4 w-4"></span>
+          <input id="busqueda-movil" type="search" class="campo py-3 pl-11" placeholder="Buscar en TicoMarket">
+        </div>
+      </form>
+      <nav class="flex flex-col divide-y divide-gray-100 text-sm font-semibold text-ink-700" aria-label="Navegación móvil">
+        <a href="catalogo.html" class="py-3 hover:text-brand-700">Catálogo</a>
+        <a href="seguridad.html" class="py-3 hover:text-brand-700">Seguridad</a>
+        <a href="planes.html" class="py-3 hover:text-brand-700">Planes</a>
+        <a href="nosotros.html" class="py-3 hover:text-brand-700">Nosotros</a>
+      </nav>
+      <div class="mt-4">
+        <a href="transacciones.html" class="flex items-center gap-3 rounded-xl border border-gray-200 p-3 transition hover:border-brand-200 hover:bg-brand-50">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+          <span class="flex-1">
+            <span class="block text-sm font-bold text-ink-900">María Jiménez</span>
+            <span class="flex items-center gap-1 text-[11px] font-semibold text-tico-700">
+              <span data-icono="badge-check" data-clases="h-3 w-3"></span>
+              Verificada · Mi panel
+            </span>
+          </span>
+          <span data-icono="chevron-right" data-clases="h-4 w-4 text-ink-400"></span>
+        </a>
+        <div class="mt-3 flex flex-col gap-2">
+          <a href="vendedor.html" class="btn-contorno">Mi perfil de vendedor</a>
+          <a href="publicar.html" aria-current="page" class="btn-verde">Publicar producto</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <div class="border-b border-gray-100">
+      <div class="contenedor py-4">
+        <nav aria-label="Ruta de navegación" class="text-xs font-medium text-ink-500">
+          <ol class="flex flex-wrap items-center gap-2">
+            <li><a href="index.html" class="transition hover:text-brand-700">Inicio</a></li>
+            <li aria-hidden="true" class="text-ink-400">/</li>
+            <li aria-current="page" class="text-ink-900">Publicar producto</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section class="border-b border-gray-100 bg-cielo-suave">
+      <div class="contenedor py-8 sm:py-10">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <span class="sello bg-white text-brand-700 ring-1 ring-brand-100">
+              <span data-icono="sparkles" data-clases="h-3.5 w-3.5"></span> Publicación guiada
+            </span>
+            <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl">Publica tu producto en 3 pasos</h1>
+            <p class="mt-2 max-w-2xl text-sm leading-relaxed text-ink-500">
+              Completa los datos, agrega fotos y define cómo entregarás. Antes de publicar puedes revisar
+              cómo se verá tu anuncio en el catálogo.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-3 text-xs font-semibold text-ink-500 shadow-sm">
+            <span class="text-tico-600" data-icono="check" data-clases="h-4 w-4"></span>
+            Borrador guardado automáticamente
+          </div>
+        </div>
+
+        <ol class="mt-8 grid gap-3 sm:grid-cols-3" aria-label="Pasos para publicar">
+          <li data-paso-indicador="1" class="flex items-center gap-3 rounded-2xl border border-brand-300 bg-white p-4 ring-1 ring-brand-100 transition">
+            <span data-paso-circulo class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-700 text-sm font-bold text-white">
+              <span data-paso-numero>1</span>
+              <span data-paso-check class="hidden" data-icono="check" data-clases="h-4 w-4"></span>
+            </span>
+            <span><span class="block text-sm font-bold text-ink-900">Datos del producto</span><span class="block text-xs text-ink-500">Título, categoría y precio</span></span>
+          </li>
+          <li data-paso-indicador="2" class="flex items-center gap-3 rounded-2xl border border-gray-200 bg-white p-4 opacity-70 transition">
+            <span data-paso-circulo class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-sm font-bold text-ink-500">
+              <span data-paso-numero>2</span>
+              <span data-paso-check class="hidden" data-icono="check" data-clases="h-4 w-4"></span>
+            </span>
+            <span><span class="block text-sm font-bold text-ink-900">Fotos del producto</span><span class="block text-xs text-ink-500">Portada y detalles</span></span>
+          </li>
+          <li data-paso-indicador="3" class="flex items-center gap-3 rounded-2xl border border-gray-200 bg-white p-4 opacity-70 transition">
+            <span data-paso-circulo class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-sm font-bold text-ink-500">
+              <span data-paso-numero>3</span>
+              <span data-paso-check class="hidden" data-icono="check" data-clases="h-4 w-4"></span>
+            </span>
+            <span><span class="block text-sm font-bold text-ink-900">Ubicación y entrega</span><span class="block text-xs text-ink-500">Cómo llega al comprador</span></span>
+          </li>
+        </ol>
+        <div class="mt-5 h-1.5 overflow-hidden rounded-full bg-white/80 ring-1 ring-gray-200">
+          <div id="progreso-publicacion" class="h-full rounded-full bg-gradient-to-r from-brand-600 to-tico-500 transition-all duration-300" style="width: 33.333%"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-8 sm:py-10">
+      <div class="contenedor">
+        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] xl:gap-10">
+          <div>
+            <div id="alerta-publicacion" class="mb-4 hidden flex items-start gap-3 rounded-2xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-700" role="alert" aria-live="assertive">
+              <span class="mt-0.5 shrink-0" data-icono="alert" data-clases="h-5 w-5"></span>
+              <div>
+                <p class="font-bold">Revisa la información</p>
+                <p id="alerta-texto" class="text-xs">Completa los campos obligatorios antes de continuar.</p>
+              </div>
+            </div>
+
+            <form id="form-publicacion" class="tarjeta scroll-mt-24 overflow-hidden" novalidate>
+              <div data-paso-panel="1">
+                <div class="border-b border-gray-100 p-5 sm:p-6">
+                  <p class="antetitulo">Paso 1 de 3</p>
+                  <h2 class="mt-1 text-xl font-extrabold tracking-tight text-ink-900">Datos del producto</h2>
+                  <p class="mt-1 text-sm leading-relaxed text-ink-500">Mientras más claro seas, más fácil será que alguien encuentre tu anuncio.</p>
+                </div>
+                <div class="space-y-5 p-5 sm:p-6">
+                  <div>
+                    <label for="pub-titulo" class="text-xs font-bold uppercase tracking-[0.12em] text-ink-500">Título del anuncio <span class="text-rose-500">*</span></label>
+                    <input id="pub-titulo" type="text" maxlength="70" class="campo mt-2" value="Laptop Lenovo IdeaPad 3, 15 pulgadas" aria-required="true" aria-describedby="error-titulo">
+                    <p class="mt-1 text-[11px] text-ink-400">Incluye marca, modelo y la característica principal.</p>
+                    <p id="error-titulo" class="mt-1 hidden text-xs font-semibold text-rose-600">Escribe un título de al menos 10 caracteres.</p>
+                  </div>
+
+                  <div class="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label for="pub-categoria" class="text-xs font-bold uppercase tracking-[0.12em] text-ink-500">Categoría <span class="text-rose-500">*</span></label>
+                      <div class="relative mt-2">
+                        <select id="pub-categoria" class="campo appearance-none pr-9">
+                          <option value="tecnologia" selected>Tecnología</option>
+                          <option value="hogar">Hogar y muebles</option>
+                          <option value="moda">Moda</option>
+                          <option value="vehiculos">Vehículos</option>
+                          <option value="deportes">Deportes</option>
+                          <option value="arte">Arte y música</option>
+                          <option value="alimentos">Alimentos</option>
+                          <option value="mascotas">Mascotas</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-400" data-icono="chevron" data-clases="h-4 w-4"></span>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="pub-condicion" class="text-xs font-bold uppercase tracking-[0.12em] text-ink-500">Condición <span class="text-rose-500">*</span></label>
+                      <div class="relative mt-2">
+                        <select id="pub-condicion" class="campo appearance-none pr-9">
+                          <option selected>Usado · como nuevo</option>
+                          <option>Nuevo</option>
+                          <option>Usado · buen estado</option>
+                          <option>Para repuestos</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-400" data-icono="chevron" data-clases="h-4 w-4"></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="pub-precio" class="text-xs font-bold uppercase tracking-[0.12em] text-ink-500">Precio en colones <span class="text-rose-500">*</span></label>
+                    <div class="relative mt-2">
+                      <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-ink-400">₡</span>
+                      <input id="pub-precio" type="number" inputmode="numeric" min="1" step="500" class="campo pl-9" value="285000" aria-required="true" aria-describedby="error-precio">
+                    </div>
+                    <p class="mt-1 text-[11px] text-ink-400">Revisa anuncios similares para elegir un precio competitivo.</p>
+                    <p id="error-precio" class="mt-1 hidden text-xs font-semibold text-rose-600">Ingresa un precio mayor que cero.</p>
+                  </div>
+
+                  <div>
+                    <label for="pub-descripcion" class="text-xs font-bold uppercase tracking-[0.12em] text-ink-500">Descripción <span class="text-rose-500">*</span></label>
+                    <textarea id="pub-descripcion" rows="5" maxlength="600" class="campo mt-2" aria-required="true">Laptop Lenovo IdeaPad 3 con pantalla de 15,6 pulgadas, ideal para estudio y trabajo. Poco uso, batería en buen estado y cargador original incluido. Se puede probar antes de comprar en San Pedro, San José.</textarea>
+                    <div class="mt-1 flex items-center justify-between gap-3 text-[11px] text-ink-400">
+                      <span>Describe el estado, lo que incluye y cómo se puede probar.</span>
+                      <span><span id="contador-descripcion">0</span>/600</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-t border-gray-100 bg-gray-50/60 px-5 py-4 sm:px-6">
+                  <a href="index.html" class="text-xs font-semibold text-ink-500 transition hover:text-brand-700">Cancelar</a>
+                  <button type="button" data-siguiente class="btn-verde px-5 py-3 text-xs">
+                    Continuar a fotos <span data-icono="chevron-right" data-clases="h-4 w-4"></span>
+                  </button>
+                </div>
+              </div>
+
+              <div data-paso-panel="2" class="hidden">
+                <div class="border-b border-gray-100 p-5 sm:p-6">
+                  <p class="antetitulo">Paso 2 de 3</p>
+                  <h2 class="mt-1 text-xl font-extrabold tracking-tight text-ink-900">Fotos del producto</h2>
+                  <p class="mt-1 text-sm leading-relaxed text-ink-500">La primera foto será la portada. Muestra el producto completo y algunos detalles.</p>
+                </div>
+                <div class="space-y-5 p-5 sm:p-6">
+                  <input id="pub-fotos" type="file" accept="image/*" multiple class="sr-only">
+                  <label for="pub-fotos" class="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-gray-300 bg-gray-50/70 px-6 py-10 text-center transition hover:border-brand-300 hover:bg-brand-50/60">
+                    <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-brand-700 shadow-sm">
+                      <span data-icono="camera" data-clases="h-7 w-7"></span>
+                    </span>
+                    <span class="mt-4 text-sm font-bold text-ink-900">Arrastra tus fotos aquí</span>
+                    <span class="mt-1 text-xs text-ink-500">o selecciona archivos desde tu dispositivo</span>
+                    <span class="mt-3 inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-[11px] font-semibold text-ink-600">
+                      <span data-icono="upload" data-clases="h-3.5 w-3.5"></span> JPG o PNG · hasta 5 MB
+                    </span>
+                  </label>
+                  <p id="estado-fotos" class="text-xs font-semibold text-tico-700"></p>
+
+                  <div>
+                    <div class="flex items-center justify-between gap-3">
+                      <p class="text-xs font-bold uppercase tracking-[0.12em] text-ink-500">Fotos de ejemplo</p>
+                      <span class="text-[11px] text-ink-400">4 de 6</span>
+                    </div>
+                    <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                      <div class="relative aspect-square overflow-hidden rounded-xl border border-brand-200 bg-gradient-to-br from-brand-50 to-brand-100">
+                        <span class="absolute left-2 top-2 rounded-full bg-white/95 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-brand-700 shadow-sm">Portada</span>
+                        <button type="button" class="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-ink-500 shadow-sm transition hover:text-rose-600" aria-label="Quitar foto de portada">
+                          <span data-icono="trash" data-clases="h-3.5 w-3.5"></span>
+                        </button>
+                        <span class="absolute inset-0 flex items-center justify-center text-brand-600"><span data-icono="laptop" data-clases="h-12 w-12"></span></span>
+                      </div>
+                      <div class="relative aspect-square overflow-hidden rounded-xl border border-gray-200 bg-gradient-to-br from-brand-50 to-brand-100">
+                        <button type="button" class="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-ink-500 shadow-sm transition hover:text-rose-600" aria-label="Quitar foto de la pantalla">
+                          <span data-icono="trash" data-clases="h-3.5 w-3.5"></span>
+                        </button>
+                        <span class="absolute inset-0 flex items-center justify-center text-brand-600"><span data-icono="monitor" data-clases="h-12 w-12"></span></span>
+                      </div>
+                      <div class="relative aspect-square overflow-hidden rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100">
+                        <button type="button" class="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-ink-500 shadow-sm transition hover:text-rose-600" aria-label="Quitar foto del teclado">
+                          <span data-icono="trash" data-clases="h-3.5 w-3.5"></span>
+                        </button>
+                        <span class="absolute inset-0 flex items-center justify-center text-ink-700"><span data-icono="keyboard" data-clases="h-12 w-12"></span></span>
+                      </div>
+                      <div class="relative aspect-square overflow-hidden rounded-xl border border-gray-200 bg-gradient-to-br from-amber-50 to-amber-100">
+                        <button type="button" class="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-ink-500 shadow-sm transition hover:text-rose-600" aria-label="Quitar foto de los puertos">
+                          <span data-icono="trash" data-clases="h-3.5 w-3.5"></span>
+                        </button>
+                        <span class="absolute inset-0 flex items-center justify-center text-amber-600"><span data-icono="plug" data-clases="h-12 w-12"></span></span>
+                      </div>
+                      <label for="pub-fotos" class="flex aspect-square cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 text-ink-400 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700">
+                        <span data-icono="plus" data-clases="h-6 w-6"></span>
+                        <span class="text-xs font-semibold">Agregar foto</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="rounded-xl border border-brand-100 bg-brand-50/60 p-4 text-xs leading-relaxed text-ink-600">
+                    <p class="font-bold text-ink-900">Consejo para la portada</p>
+                    <p class="mt-1">Usa luz natural, un fondo limpio y muestra el producto completo. Evita fotos borrosas o con datos personales.</p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-t border-gray-100 bg-gray-50/60 px-5 py-4 sm:px-6">
+                  <button type="button" data-atras class="btn-contorno px-4 py-3 text-xs">
+                    <span data-icono="arrow-left" data-clases="h-4 w-4"></span> Atrás
+                  </button>
+                  <button type="button" data-siguiente class="btn-verde px-5 py-3 text-xs">
+                    Continuar a entrega <span data-icono="chevron-right" data-clases="h-4 w-4"></span>
+                  </button>
+                </div>
+              </div>
+
+              <div data-paso-panel="3" class="hidden">
+                <div class="border-b border-gray-100 p-5 sm:p-6">
+                  <p class="antetitulo">Paso 3 de 3</p>
+                  <h2 class="mt-1 text-xl font-extrabold tracking-tight text-ink-900">Ubicación y entrega</h2>
+                  <p class="mt-1 text-sm leading-relaxed text-ink-500">Indica dónde estás y cómo prefieres entregar el producto.</p>
+                </div>
+                <div class="space-y-5 p-5 sm:p-6">
+                  <div class="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label for="pub-provincia" class="text-xs font-bold uppercase tracking-[0.12em] text-ink-500">Provincia <span class="text-rose-500">*</span></label>
+                      <div class="relative mt-2">
+                        <select id="pub-provincia" class="campo appearance-none pr-9">
+                          <option>San José</option>
+                          <option>Alajuela</option>
+                          <option>Cartago</option>
+                          <option>Heredia</option>
+                          <option>Guanacaste</option>
+                          <option>Puntarenas</option>
+                          <option>Limón</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-400" data-icono="chevron" data-clases="h-4 w-4"></span>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="pub-canton" class="text-xs font-bold uppercase tracking-[0.12em] text-ink-500">Cantón o distrito <span class="text-rose-500">*</span></label>
+                      <input id="pub-canton" type="text" class="campo mt-2" value="San Pedro" aria-required="true">
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="pub-direccion" class="text-xs font-bold uppercase tracking-[0.12em] text-ink-500">Señas o punto de referencia <span class="font-normal normal-case tracking-normal text-ink-400">(opcional)</span></label>
+                    <input id="pub-direccion" type="text" class="campo mt-2" placeholder="Ej. 200 m norte de la iglesia">
+                  </div>
+
+                  <fieldset>
+                    <legend class="text-xs font-bold uppercase tracking-[0.12em] text-ink-500">Forma de entrega</legend>
+                    <div class="mt-3 grid gap-3 sm:grid-cols-2">
+                      <label data-entrega-opcion class="flex cursor-pointer gap-3 rounded-xl border border-brand-200 bg-brand-50/50 p-4 ring-1 ring-brand-100">
+                        <input type="radio" name="entrega" class="mt-0.5 h-4 w-4 accent-brand-700" checked>
+                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white text-brand-700 shadow-sm"><span data-icono="map-pin" data-clases="h-5 w-5"></span></span>
+                        <span><span class="block text-sm font-bold text-ink-900">Entrega en persona</span><span class="mt-0.5 block text-xs leading-relaxed text-ink-500">Coordinas el lugar y la hora con el comprador.</span></span>
+                      </label>
+                      <label data-entrega-opcion class="flex cursor-pointer gap-3 rounded-xl border border-gray-200 bg-white p-4 transition hover:border-brand-200">
+                        <input type="radio" name="entrega" class="mt-0.5 h-4 w-4 accent-brand-700">
+                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-tico-50 text-tico-700"><span data-icono="truck" data-clases="h-5 w-5"></span></span>
+                        <span><span class="block text-sm font-bold text-ink-900">Envío con seguimiento</span><span class="mt-0.5 block text-xs leading-relaxed text-ink-500">Usas un servicio de mensajería y compartes la guía.</span></span>
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <div class="space-y-3 rounded-xl border border-gray-100 bg-gray-50/70 p-4">
+                    <label class="flex cursor-pointer items-start gap-3 text-sm text-ink-700">
+                      <input type="checkbox" class="mt-0.5 h-4 w-4 rounded accent-brand-700" checked>
+                      <span><span class="font-semibold text-ink-900">Acepto transferencia y SINPE Móvil</span><span class="mt-0.5 block text-xs text-ink-500">El comprador adjunta el comprobante del pago.</span></span>
+                    </label>
+                    <label class="flex cursor-pointer items-start gap-3 text-sm text-ink-700">
+                      <input type="checkbox" class="mt-0.5 h-4 w-4 rounded accent-brand-700" checked>
+                      <span><span class="font-semibold text-ink-900">Permito revisar el producto antes de pagar</span><span class="mt-0.5 block text-xs text-ink-500">Genera más confianza en compradores nuevos.</span></span>
+                    </label>
+                  </div>
+
+                  <div class="flex gap-3 rounded-xl border border-tico-100 bg-tico-50/60 p-4 text-xs leading-relaxed text-ink-600">
+                    <span class="mt-0.5 shrink-0 text-tico-700" data-icono="shield" data-clases="h-5 w-5"></span>
+                    <p><span class="font-bold text-ink-900">Publica con tranquilidad.</span> No incluyas claves, códigos de verificación ni datos bancarios sensibles en la descripción.</p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between gap-3 border-t border-gray-100 bg-gray-50/60 px-5 py-4 sm:px-6">
+                  <button type="button" data-atras class="btn-contorno px-4 py-3 text-xs">
+                    <span data-icono="arrow-left" data-clases="h-4 w-4"></span> Atrás
+                  </button>
+                  <button type="button" data-publicar class="btn-verde px-5 py-3 text-xs">
+                    <span data-icono="check" data-clases="h-4 w-4"></span> Publicar producto
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div id="publicacion-exito" class="hidden flex-col items-center rounded-3xl border border-tico-100 bg-white p-8 text-center shadow-tarjeta sm:p-12">
+              <span class="flex h-16 w-16 items-center justify-center rounded-full bg-tico-100 text-tico-700"><span data-icono="check" data-clases="h-8 w-8"></span></span>
+              <h2 class="mt-5 text-2xl font-extrabold tracking-tight text-ink-900">Tu producto está listo</h2>
+              <p class="mt-2 max-w-md text-sm leading-relaxed text-ink-500">Esta es una simulación del prototipo. En la versión final, el anuncio se publicaría y aparecería en el catálogo.</p>
+              <div class="mt-6 flex flex-wrap justify-center gap-3">
+                <a href="producto.html" class="btn-verde">Ver mi publicación</a>
+                <button type="button" data-reiniciar class="btn-contorno">Publicar otro producto</button>
+              </div>
+              <a href="catalogo.html" class="enlace mt-4 text-xs">Volver al catálogo</a>
+            </div>
+          </div>
+
+          <aside class="space-y-4 self-start lg:sticky lg:top-24">
+            <div class="tarjeta overflow-hidden">
+              <div class="flex items-center justify-between gap-2 border-b border-gray-100 px-4 py-3">
+                <p class="text-xs font-bold uppercase tracking-[0.12em] text-ink-500">Así se verá tu anuncio</p>
+                <span class="text-brand-600" data-icono="eye" data-clases="h-4 w-4"></span>
+              </div>
+              <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-brand-50 via-white to-brand-100">
+                <span class="pointer-events-none absolute -right-8 -top-10 h-28 w-28 rounded-full bg-brand-200/50"></span>
+                <span class="pointer-events-none absolute -bottom-10 -left-8 h-24 w-24 rounded-full bg-tico-200/40"></span>
+                <span class="sello absolute left-3 top-3 bg-white/95 text-ink-600 shadow-sm"><span data-icono="pencil" data-clases="h-3.5 w-3.5"></span> Borrador</span>
+                <span class="absolute inset-0 flex items-center justify-center text-brand-600"><span id="preview-icono" data-icono="laptop" data-clases="h-16 w-16"></span></span>
+              </div>
+              <div class="p-4">
+                <p id="preview-categoria" class="text-[10px] font-bold uppercase tracking-[0.12em] text-brand-700">Tecnología</p>
+                <p id="preview-titulo" class="mt-1 line-clamp-2 text-sm font-bold leading-snug text-ink-900">Laptop Lenovo IdeaPad 3, 15 pulgadas</p>
+                <p id="preview-precio" class="mt-2 text-lg font-extrabold tracking-tight text-ink-900">₡285.000</p>
+                <div class="mt-1 flex items-center gap-1 text-xs text-ink-500">
+                  <span data-icono="map-pin" data-clases="h-3.5 w-3.5"></span>
+                  <span id="preview-ubicacion" class="truncate">San Pedro, San José</span>
+                </div>
+                <div class="mt-3 flex items-center justify-between gap-2 border-t border-gray-100 pt-2 text-[11px]">
+                  <span id="preview-condicion" class="text-ink-500">Usado · como nuevo</span>
+                  <span class="text-ink-400">María Jiménez</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tarjeta p-5">
+              <h2 class="text-sm font-bold text-ink-900">Consejos para vender mejor</h2>
+              <ul class="mt-3 space-y-3 text-xs leading-relaxed text-ink-500">
+                <li class="flex gap-2.5">
+                  <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700"><span data-icono="camera" data-clases="h-4 w-4"></span></span>
+                  <span><span class="block font-semibold text-ink-900">Fotos claras</span>La portada decide si abren tu anuncio.</span>
+                </li>
+                <li class="flex gap-2.5">
+                  <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-tico-50 text-tico-700"><span data-icono="tag" data-clases="h-4 w-4"></span></span>
+                  <span><span class="block font-semibold text-ink-900">Precio competitivo</span>Revisa anuncios similares antes de publicar.</span>
+                </li>
+                <li class="flex gap-2.5">
+                  <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600"><span data-icono="chat" data-clases="h-4 w-4"></span></span>
+                  <span><span class="block font-semibold text-ink-900">Responde rápido</span>Una respuesta en menos de 2 horas genera confianza.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl border border-tico-100 bg-tico-50/60 p-5">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-tico-700 shadow-sm"><span data-icono="shield" data-clases="h-5 w-5"></span></span>
+              <p class="mt-3 text-sm font-bold text-ink-900">Publica con tranquilidad</p>
+              <p class="mt-1 text-xs leading-relaxed text-ink-500">Tus datos de contacto no se muestran públicamente. Las conversaciones quedan dentro de TicoMarket.</p>
+              <a href="seguridad.html" class="enlace mt-3 inline-flex items-center gap-1 text-xs">Consejos de seguridad <span data-icono="arrow" data-clases="h-3.5 w-3.5"></span></a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-brand-950 text-brand-100">
+    <div class="contenedor grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-3">
+          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1">
+            <img src="assets/img/logo-icono.png" alt="" width="685" height="540" class="h-full w-auto">
+          </span>
+          <span class="text-xl font-extrabold tracking-tight"><span class="text-white">Tico</span><span class="text-tico-400">Market</span></span>
+        </div>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-brand-200">Compra y vende seguro en Costa Rica. Verificación, reputación y seguimiento en cada transacción.</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-[11px] font-semibold">
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">SINPE Móvil</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">Transferencia bancaria</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">Evidencia de pago</span>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">Explorar</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="catalogo.html" class="transition hover:text-white">Catálogo</a></li>
+          <li><a href="publicar.html" class="transition hover:text-white">Publicar producto</a></li>
+          <li><a href="planes.html" class="transition hover:text-white">Planes y verificación</a></li>
+          <li><a href="vendedor.html" class="transition hover:text-white">Perfil de vendedor</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">Confianza</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="seguridad.html" class="transition hover:text-white">Cómo funciona</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Verificación de identidad</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Evidencias de pago</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Consejos de seguridad</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">TicoMarket</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="nosotros.html" class="transition hover:text-white">Sobre nosotros</a></li>
+          <li><a href="nosotros.html" class="transition hover:text-white">Misión y visión</a></li>
+          <li><a href="planes.html#preguntas" class="transition hover:text-white">Preguntas frecuentes</a></li>
+          <li><a href="mailto:hola@ticomarket.cr" class="transition hover:text-white">hola@ticomarket.cr</a></li>
+        </ul>
+        <p class="mt-4 text-xs text-brand-300">San José, Costa Rica</p>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="contenedor flex flex-col items-center justify-between gap-3 py-5 text-xs text-brand-300 sm:flex-row">
+        <p>© <span data-anio>2026</span> TicoMarket. Hecho en Costa Rica.</p>
+        <div class="flex gap-5">
+          <a href="#" class="transition hover:text-white">Términos</a>
+          <a href="#" class="transition hover:text-white">Privacidad</a>
+          <a href="#" class="transition hover:text-white">Cookies</a>
+        </div>
+      </div>
+    </div>
+    <div class="h-1.5 w-full" style="background: linear-gradient(90deg, #0B4EA2 0 33%, #FFFFFF 33% 66%, #CE1126 66% 100%)"></div>
+  </footer>
+
+  <script src="assets/js/datos.js"></script>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/paginas.js"></script>
+</body>
+</html>

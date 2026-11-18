@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TicoMarket — Compra y vende seguro en Costa Rica</title>
+  <meta name="description" content="Marketplace costarricense con verificación de identidad, reputación, seguimiento de paquetes y evidencias de pago. Compra y vende seguro en Costa Rica.">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="assets/css/fuentes.css">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body class="bg-white">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-brand-700 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Saltar al contenido</a>
+
+  <header id="cabecera" class="sticky top-0 z-40 border-b border-gray-100 bg-white/90 backdrop-blur transition-shadow">
+    <div class="contenedor flex h-20 items-center gap-4">
+      <a href="index.html" class="flex shrink-0 items-center gap-2.5" aria-label="TicoMarket, ir al inicio">
+        <img src="assets/img/logo-icono.png" alt="" width="685" height="540" class="h-11 w-auto sm:h-12">
+        <span class="text-[24px] font-extrabold leading-none tracking-tight sm:text-[26px]">
+          <span class="text-brand-700">Tico</span><span class="text-tico-500">Market</span>
+        </span>
+      </a>
+
+      <form role="search" class="mx-auto hidden w-full max-w-md lg:block">
+        <label for="busqueda-cabecera" class="sr-only">Buscar productos</label>
+        <div class="relative">
+          <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-400" data-icono="search" data-clases="h-4 w-4"></span>
+          <input id="busqueda-cabecera" type="search" class="campo py-2.5 pl-11 pr-24 text-sm" placeholder="Buscar en TicoMarket">
+          <button type="submit" class="btn-verde absolute right-1.5 top-1/2 -translate-y-1/2 px-4 py-2 text-xs">Buscar</button>
+        </div>
+      </form>
+
+      <nav class="ml-auto hidden items-center gap-5 text-sm font-semibold text-ink-700 xl:flex" aria-label="Navegación principal">
+        <a href="catalogo.html" class="transition hover:text-brand-700">Catálogo</a>
+        <a href="seguridad.html" class="transition hover:text-brand-700">Seguridad</a>
+        <a href="planes.html" class="transition hover:text-brand-700">Planes</a>
+        <a href="nosotros.html" class="transition hover:text-brand-700">Nosotros</a>
+      </nav>
+
+      <div class="ml-auto hidden items-center gap-2 md:flex xl:ml-0">
+        <div class="relative" data-menu-usuario>
+          <button type="button" data-boton-usuario class="flex h-11 items-center gap-2 rounded-xl border border-gray-200 bg-white pl-1.5 pr-2.5 text-sm font-semibold text-ink-700 transition hover:border-brand-200 hover:bg-brand-50" aria-expanded="false" aria-controls="menu-usuario" aria-haspopup="true" aria-label="Abrir menú de usuario">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+            <span class="hidden md:inline xl:hidden">María</span>
+            <span data-boton-usuario-icono class="text-ink-400 transition-transform" data-icono="chevron" data-clases="h-4 w-4"></span>
+          </button>
+          <div id="menu-usuario" data-panel-usuario class="absolute right-0 top-full z-50 mt-2 hidden w-64 overflow-hidden rounded-2xl border border-gray-100 bg-white p-2 shadow-flotante">
+            <div class="flex items-center gap-2.5 border-b border-gray-100 px-3 pb-3 pt-2">
+              <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+              <div>
+                <p class="text-sm font-bold text-ink-900">María Jiménez</p>
+                <p class="flex items-center gap-1 text-[11px] font-semibold text-tico-700">
+                  <span data-icono="badge-check" data-clases="h-3 w-3"></span>
+                  Cuenta verificada
+                </p>
+              </div>
+            </div>
+            <nav class="mt-1 flex flex-col text-sm" aria-label="Menú de usuario">
+              <a href="transacciones.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-semibold text-brand-700 transition hover:bg-brand-50">
+                <span data-icono="receipt" data-clases="h-4 w-4"></span>
+                Mi panel de transacciones
+              </a>
+              <a href="vendedor.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-medium text-ink-700 transition hover:bg-gray-50 hover:text-brand-700">
+                <span data-icono="store" data-clases="h-4 w-4 text-ink-400"></span>
+                Mi perfil de vendedor
+              </a>
+              <a href="planes.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-medium text-ink-700 transition hover:bg-gray-50 hover:text-brand-700">
+                <span data-icono="sparkles" data-clases="h-4 w-4 text-ink-400"></span>
+                Mis planes
+              </a>
+            </nav>
+            <div class="mt-1 border-t border-gray-100 pt-1">
+              <a href="#" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium text-ink-500 transition hover:bg-gray-50 hover:text-ink-900">
+                <span data-icono="close" data-clases="h-4 w-4"></span>
+                Cerrar sesión
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="publicar.html" class="btn-verde px-4 py-2.5">
+          <span data-icono="plus" data-clases="h-4 w-4"></span>
+          Publicar
+        </a>
+      </div>
+
+      <button id="btn-menu" type="button" class="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 text-brand-700 transition hover:bg-brand-50 md:ml-0 xl:hidden" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+        <span id="icono-menu" data-icono="menu" data-clases="h-6 w-6"></span>
+        <span id="icono-cerrar" class="hidden" data-icono="close" data-clases="h-6 w-6"></span>
+      </button>
+    </div>
+
+    <div id="menu-movil" class="hidden border-t border-gray-100 bg-white px-4 pb-6 pt-4 xl:hidden">
+      <form role="search" class="mb-4">
+        <label for="busqueda-movil" class="sr-only">Buscar productos</label>
+        <div class="relative">
+          <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-400" data-icono="search" data-clases="h-4 w-4"></span>
+          <input id="busqueda-movil" type="search" class="campo py-3 pl-11" placeholder="Buscar en TicoMarket">
+        </div>
+      </form>
+      <nav class="flex flex-col divide-y divide-gray-100 text-sm font-semibold text-ink-700" aria-label="Navegación móvil">
+        <a href="catalogo.html" class="py-3 hover:text-brand-700">Catálogo</a>
+        <a href="seguridad.html" class="py-3 hover:text-brand-700">Seguridad</a>
+        <a href="planes.html" class="py-3 hover:text-brand-700">Planes</a>
+        <a href="nosotros.html" class="py-3 hover:text-brand-700">Nosotros</a>
+      </nav>
+      <div class="mt-4">
+        <a href="transacciones.html" class="flex items-center gap-3 rounded-xl border border-gray-200 p-3 transition hover:border-brand-200 hover:bg-brand-50">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+          <span class="flex-1">
+            <span class="block text-sm font-bold text-ink-900">María Jiménez</span>
+            <span class="flex items-center gap-1 text-[11px] font-semibold text-tico-700">
+              <span data-icono="badge-check" data-clases="h-3 w-3"></span>
+              Verificada · Mi panel
+            </span>
+          </span>
+          <span data-icono="chevron-right" data-clases="h-4 w-4 text-ink-400"></span>
+        </a>
+        <div class="mt-3 flex flex-col gap-2">
+          <a href="vendedor.html" class="btn-contorno">Mi perfil de vendedor</a>
+          <a href="publicar.html" class="btn-verde">Publicar producto</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="bg-cielo-suave">
+      <div class="contenedor grid items-center gap-12 py-12 lg:grid-cols-[1.02fr,0.98fr] lg:py-16">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-4 py-1.5 text-xs font-semibold text-brand-700 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-tico-500"></span>
+            Hecho para Costa Rica
+          </span>
+
+          <h1 class="mt-5 text-4xl font-extrabold leading-[1.08] tracking-tight text-ink-900 sm:text-5xl xl:text-[3.35rem]">
+            Compra y vende
+            <span class="relative inline-block text-tico-600">seguro
+              <svg class="absolute -bottom-2 left-0 h-3 w-full text-tico-300" viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M2 9c30-6 60-6 116-3" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+            </span>
+            en Costa Rica
+          </h1>
+
+          <p class="mt-6 max-w-xl text-base leading-relaxed text-ink-700 sm:text-lg">
+            La plataforma que conecta compradores y vendedores con verificación de identidad,
+            reputación real, seguimiento de paquetes y evidencias de pago.
+          </p>
+
+          <form role="search" class="mt-8">
+            <div class="flex flex-col gap-2 rounded-2xl border border-gray-200 bg-white p-2 shadow-suave sm:flex-row sm:items-center">
+              <div class="relative flex-1">
+                <label for="busqueda-inicio" class="sr-only">Buscar productos</label>
+                <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-400" data-icono="search" data-clases="h-5 w-5"></span>
+                <input id="busqueda-inicio" type="search" class="w-full rounded-xl border-0 bg-transparent py-3 pl-11 pr-3 text-sm text-ink-900 placeholder:text-ink-400 focus:ring-0" placeholder="¿Qué estás buscando?">
+              </div>
+              <div class="hidden h-8 w-px bg-gray-200 sm:block"></div>
+              <div class="relative border-t border-gray-100 pt-2 sm:border-t-0 sm:pt-0">
+                <label for="categoria-inicio" class="sr-only">Categoría</label>
+                <select id="categoria-inicio" class="appearance-none rounded-xl border-0 bg-transparent py-3 pl-3 pr-9 text-sm font-medium text-ink-700 focus:ring-0">
+                  <option>Todas las categorías</option>
+                  <option>Tecnología</option>
+                  <option>Hogar y muebles</option>
+                  <option>Moda</option>
+                  <option>Vehículos</option>
+                  <option>Deportes</option>
+                  <option>Arte y música</option>
+                  <option>Alimentos</option>
+                  <option>Mascotas</option>
+                </select>
+                <span class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-ink-400" data-icono="chevron" data-clases="h-4 w-4"></span>
+              </div>
+              <button type="submit" class="btn-verde sm:px-7">Buscar</button>
+            </div>
+          </form>
+
+          <div class="mt-4 flex flex-wrap items-center gap-2 text-xs text-ink-500">
+            <span class="font-semibold">Popular:</span>
+            <a href="catalogo.html" class="rounded-full border border-gray-200 bg-white px-3 py-1.5 font-medium text-ink-700 transition hover:border-brand-300 hover:text-brand-700">Laptop</a>
+            <a href="catalogo.html" class="rounded-full border border-gray-200 bg-white px-3 py-1.5 font-medium text-ink-700 transition hover:border-brand-300 hover:text-brand-700">Café de Tarrazú</a>
+            <a href="catalogo.html" class="rounded-full border border-gray-200 bg-white px-3 py-1.5 font-medium text-ink-700 transition hover:border-brand-300 hover:text-brand-700">Bicicleta</a>
+            <a href="catalogo.html" class="rounded-full border border-gray-200 bg-white px-3 py-1.5 font-medium text-ink-700 transition hover:border-brand-300 hover:text-brand-700">Sofá</a>
+          </div>
+
+          <ul class="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-ink-700">
+            <li class="flex items-center gap-1.5"><span class="text-tico-600" data-icono="badge-check" data-clases="h-4 w-4"></span> Vendedores verificados</li>
+            <li class="flex items-center gap-1.5"><span class="text-tico-600" data-icono="receipt" data-clases="h-4 w-4"></span> Evidencias de pago</li>
+            <li class="flex items-center gap-1.5"><span class="text-tico-600" data-icono="truck" data-clases="h-4 w-4"></span> Seguimiento de paquetes</li>
+          </ul>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-lg lg:max-w-none">
+          <div class="relative aspect-[5/4] overflow-hidden rounded-[2rem] border border-brand-100 bg-brand-50 shadow-flotante">
+            <svg viewBox="0 0 640 512" class="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <defs>
+                <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#E8F1FD"/>
+                  <stop offset="1" stop-color="#FAFCFF"/>
+                </linearGradient>
+                <linearGradient id="volcan" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#C7DCF7"/>
+                  <stop offset="1" stop-color="#9FC3EF"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="512" fill="url(#cielo)"/>
+              <circle cx="150" cy="118" r="46" fill="#FDE68A" opacity=".35"/>
+              <circle cx="150" cy="118" r="27" fill="#FCD34D"/>
+              <g fill="#FFFFFF" opacity=".85">
+                <ellipse cx="300" cy="96" rx="46" ry="14"/>
+                <ellipse cx="332" cy="90" rx="30" ry="11"/>
+                <ellipse cx="520" cy="150" rx="38" ry="12"/>
+                <ellipse cx="548" cy="145" rx="24" ry="9"/>
+              </g>
+              <path d="M-10 344 128 194 266 344Z" fill="#DCE8FA"/>
+              <path d="M96 344 258 152 420 344Z" fill="#CFE1F9"/>
+              <path d="M330 356c50-56 82-140 130-158 48 18 80 102 130 158Z" fill="url(#volcan)"/>
+              <path d="M424 236 460 198 496 236 482 243 470 233 460 242 450 233 438 243Z" fill="#FFFFFF"/>
+              <path d="M0 356c112-32 224-24 336 0s208 26 304 0v156H0Z" fill="#A8CCF4"/>
+              <path d="M0 410c136-34 268-12 402 6s186 12 238-4v100H0Z" fill="#86B7EE"/>
+              <path d="M0 458c158-26 316-6 474 6s138 8 166 2v46H0Z" fill="#679FDF"/>
+              <g fill="#123C7C">
+                <path d="m104 350 9-17 9 17Z"/>
+                <path d="m132 356 7-13 7 13Z"/>
+                <path d="m566 360 9-17 9 17Z"/>
+                <path d="m592 366 7-13 7 13Z"/>
+                <path d="m226 352 6-12 6 12Z"/>
+              </g>
+              <path d="M0 486c120-10 240 10 360 6s200-14 280-8" fill="none" stroke="#0B4EA2" stroke-width="6"/>
+              <path d="M0 498c124-10 244 10 366 6s196-14 274-8" fill="none" stroke="#CE1126" stroke-width="5" opacity=".95"/>
+            </svg>
+
+            <div class="absolute right-4 top-6 flex items-center gap-3 rounded-2xl bg-white/95 p-3 pr-5 shadow-flotante ring-1 ring-brand-100 sm:right-6 sm:top-8">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-tico-100 text-tico-700">
+                <span data-icono="shield" data-clases="h-5 w-5"></span>
+              </span>
+              <div>
+                <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-tico-700">Verificado</p>
+                <p class="text-xs font-semibold text-ink-900">María Jiménez</p>
+                <p class="text-[10px] text-ink-500">Identidad confirmada</p>
+              </div>
+            </div>
+
+            <div class="absolute bottom-14 left-4 flex w-60 items-center gap-3 rounded-2xl bg-white p-3 shadow-flotante ring-1 ring-brand-100 sm:bottom-16 sm:left-6">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
+                <span data-icono="coffee" data-clases="h-6 w-6"></span>
+              </span>
+              <div class="min-w-0">
+                <p class="truncate text-xs font-semibold text-ink-900">Café de Tarrazú, 1 kg</p>
+                <p class="text-sm font-extrabold text-ink-900">₡9.500</p>
+                <p class="flex items-center gap-1 text-[10px] font-semibold text-tico-700">
+                  <span data-icono="badge-check" data-clases="h-3 w-3"></span> Vendedor verificado
+                </p>
+              </div>
+            </div>
+
+            <div class="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-brand-700 px-4 py-2 text-[11px] font-semibold text-white shadow-lg sm:right-6">
+              <span data-icono="truck" data-clases="h-4 w-4"></span>
+              Envío con seguimiento
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-gray-100 bg-white">
+      <div class="contenedor grid grid-cols-2 gap-6 py-8 lg:grid-cols-4">
+        <div class="flex items-start gap-3">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700"><span data-icono="shield" data-clases="h-5 w-5"></span></span>
+          <div><p class="text-sm font-bold text-ink-900">Identidad verificada</p><p class="mt-0.5 text-xs text-ink-500">Compradores y vendedores confirmados.</p></div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-tico-50 text-tico-700"><span data-icono="star" data-clases="h-5 w-5"></span></span>
+          <div><p class="text-sm font-bold text-ink-900">Reputación real</p><p class="mt-0.5 text-xs text-ink-500">Valoraciones de cada transacción.</p></div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700"><span data-icono="truck" data-clases="h-5 w-5"></span></span>
+          <div><p class="text-sm font-bold text-ink-900">Seguimiento de paquetes</p><p class="mt-0.5 text-xs text-ink-500">Sabes dónde va tu compra.</p></div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-tico-50 text-tico-700"><span data-icono="receipt" data-clases="h-5 w-5"></span></span>
+          <div><p class="text-sm font-bold text-ink-900">Evidencias de pago</p><p class="mt-0.5 text-xs text-ink-500">Respaldo de cada transacción.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="antetitulo">Explora</p>
+            <h2 class="titulo-seccion">Encuentra lo que buscas por categoría</h2>
+          </div>
+          <a href="catalogo.html" class="enlace inline-flex items-center gap-1 text-sm">
+            Ver todo el catálogo <span data-icono="arrow" data-clases="h-4 w-4"></span>
+          </a>
+        </div>
+        <div data-lista="categorias" class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"></div>
+      </div>
+    </section>
+
+    <section id="productos" class="bg-gray-50/70 py-16 sm:py-20">
+      <div class="contenedor">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="antetitulo">Recién publicado</p>
+            <h2 class="titulo-seccion">Productos destacados</h2>
+            <p class="mt-2 max-w-xl text-sm text-ink-500">Una muestra de lo que puedes encontrar hoy en TicoMarket.</p>
+          </div>
+          <a href="catalogo.html" class="enlace inline-flex items-center gap-1 text-sm">
+            Ver todos <span data-icono="arrow" data-clases="h-4 w-4"></span>
+          </a>
+        </div>
+        <div data-lista="productos" data-limite="8" class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"></div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="antetitulo">Así funciona</p>
+          <h2 class="titulo-seccion">Comprar seguro es así de simple</h2>
+          <p class="mt-3 text-sm leading-relaxed text-ink-500">Cada paso deja rastro: quién vende, cómo paga y por dónde va el paquete.</p>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <article class="tarjeta relative p-6">
+            <span class="absolute right-5 top-5 text-4xl font-extrabold text-brand-100">01</span>
+            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-700"><span data-icono="search" data-clases="h-6 w-6"></span></span>
+            <h3 class="mt-5 text-lg font-bold">Encuentra y revisa</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-500">Filtra por categoría y ubicación, y revisa la reputación y el sello de verificación del vendedor.</p>
+          </article>
+          <article class="tarjeta relative p-6">
+            <span class="absolute right-5 top-5 text-4xl font-extrabold text-brand-100">02</span>
+            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-tico-50 text-tico-700"><span data-icono="receipt" data-clases="h-6 w-6"></span></span>
+            <h3 class="mt-5 text-lg font-bold">Acuerda y guarda la evidencia</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-500">Conversa desde la plataforma y conserva el comprobante de pago como respaldo de la compra.</p>
+          </article>
+          <article class="tarjeta relative p-6">
+            <span class="absolute right-5 top-5 text-4xl font-extrabold text-brand-100">03</span>
+            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-700"><span data-icono="truck" data-clases="h-6 w-6"></span></span>
+            <h3 class="mt-5 text-lg font-bold">Sigue tu paquete</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-500">Consulta el estado de la entrega y confirma cuando el producto llegue a tus manos.</p>
+          </article>
+        </div>
+        <div class="mt-8 text-center">
+          <a href="seguridad.html" class="btn-contorno">Conocer cómo funciona <span data-icono="arrow" data-clases="h-4 w-4"></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-brand-950 py-16 text-white sm:py-20">
+      <div class="contenedor grid items-center gap-12 lg:grid-cols-[0.95fr,1.05fr]">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-tico-300">Confianza primero</p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Seguridad que se nota en cada compra</h2>
+          <p class="mt-4 max-w-lg text-sm leading-relaxed text-brand-100">
+            TicoMarket no solo conecta personas: deja evidencia de quién vende, qué se acordó y cómo se entregó.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-tico-500/20 text-tico-300"><span data-icono="badge-check" data-clases="h-5 w-5"></span></span>
+              <p class="mt-3 text-sm font-bold">Verificación de identidad</p>
+              <p class="mt-1 text-xs leading-relaxed text-brand-200">Cédula y datos de contacto confirmados antes de vender.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-tico-500/20 text-tico-300"><span data-icono="star" data-clases="h-5 w-5"></span></span>
+              <p class="mt-3 text-sm font-bold">Reputación pública</p>
+              <p class="mt-1 text-xs leading-relaxed text-brand-200">Calificaciones reales de compradores y vendedores.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-tico-500/20 text-tico-300"><span data-icono="truck" data-clases="h-5 w-5"></span></span>
+              <p class="mt-3 text-sm font-bold">Seguimiento de paquetes</p>
+              <p class="mt-1 text-xs leading-relaxed text-brand-200">Estado de la entrega visible para ambas partes.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-tico-500/20 text-tico-300"><span data-icono="receipt" data-clases="h-5 w-5"></span></span>
+              <p class="mt-3 text-sm font-bold">Evidencias de pago</p>
+              <p class="mt-1 text-xs leading-relaxed text-brand-200">Comprobantes que respaldan cada transacción.</p>
+            </div>
+          </div>
+          <a href="seguridad.html" class="btn-claro mt-8">Ver cómo protegemos tu compra</a>
+        </div>
+
+        <div class="relative">
+          <div class="rounded-3xl bg-white p-5 text-ink-900 shadow-flotante sm:p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-ink-400">Compra protegida</p>
+                <p class="mt-1 text-sm font-bold">Bicicleta de montaña GT</p>
+              </div>
+              <span class="sello bg-tico-50 text-tico-700"><span data-icono="shield" data-clases="h-3.5 w-3.5"></span> En curso</span>
+            </div>
+
+            <ol class="mt-6 space-y-4">
+              <li class="flex gap-3">
+                <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-tico-500 text-white"><span data-icono="check" data-clases="h-4 w-4"></span></span>
+                <div><p class="text-sm font-semibold">Pago registrado</p><p class="text-xs text-ink-500">Evidencia adjunta · ₡185.000</p></div>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-tico-500 text-white"><span data-icono="check" data-clases="h-4 w-4"></span></span>
+                <div><p class="text-sm font-semibold">Vendedor verificado</p><p class="text-xs text-ink-500">Andrea Solís · identidad confirmada</p></div>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-700 text-white"><span data-icono="truck" data-clases="h-4 w-4"></span></span>
+                <div><p class="text-sm font-semibold">En camino</p><p class="text-xs text-ink-500">Guía CR-4821-90 · entrega estimada el viernes</p></div>
+              </li>
+              <li class="flex gap-3 opacity-50">
+                <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-gray-200 text-ink-400"><span data-icono="check" data-clases="h-4 w-4"></span></span>
+                <div><p class="text-sm font-semibold">Entregado</p><p class="text-xs text-ink-500">Confirma la recepción para calificar</p></div>
+              </li>
+            </ol>
+
+            <div class="mt-6 flex items-center justify-between rounded-xl bg-gray-50 p-3">
+              <div class="flex items-center gap-2 text-xs font-semibold text-ink-700">
+                <span class="text-tico-600" data-icono="receipt" data-clases="h-4 w-4"></span>
+                Comprobante de pago
+              </div>
+              <span class="text-[11px] font-semibold text-tico-700">Aprobado</span>
+            </div>
+          </div>
+          <div class="absolute -bottom-5 -left-4 hidden items-center gap-2 rounded-full bg-tico-500 px-4 py-2 text-xs font-bold text-white shadow-lg sm:flex">
+            <span data-icono="lock" data-clases="h-4 w-4"></span>
+            Datos protegidos
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="antetitulo">Comunidad</p>
+            <h2 class="titulo-seccion">Vendedores verificados</h2>
+            <p class="mt-2 max-w-xl text-sm text-ink-500">Personas y negocios con identidad confirmada y reputación construida venta a venta.</p>
+          </div>
+          <a href="catalogo.html" class="enlace inline-flex items-center gap-1 text-sm">
+            Explorar vendedores <span data-icono="arrow" data-clases="h-4 w-4"></span>
+          </a>
+        </div>
+        <div data-lista="vendedores" data-limite="3" class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <section class="pb-16 sm:pb-20">
+      <div class="contenedor">
+        <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-800 via-brand-700 to-brand-600 px-6 py-10 text-white shadow-flotante sm:px-10 lg:px-14 lg:py-14">
+          <div class="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full bg-tico-400/20"></div>
+          <div class="pointer-events-none absolute -bottom-24 right-24 h-56 w-56 rounded-full bg-white/5"></div>
+          <div class="relative grid items-center gap-10 lg:grid-cols-[1.1fr,0.9fr]">
+            <div>
+              <span class="sello bg-white/10 text-tico-200"><span data-icono="store" data-clases="h-3.5 w-3.5"></span> Para vendedores</span>
+              <h2 class="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">Vende más rápido con una cuenta verificada</h2>
+              <p class="mt-3 max-w-lg text-sm leading-relaxed text-brand-100">Publica tus productos, muestra tu sello de verificación y construye la reputación que tus clientes buscan.</p>
+              <ul class="mt-6 space-y-2 text-sm text-brand-100">
+                <li class="flex items-center gap-2"><span class="text-tico-300" data-icono="check" data-clases="h-4 w-4"></span> Publicación de productos en minutos</li>
+                <li class="flex items-center gap-2"><span class="text-tico-300" data-icono="check" data-clases="h-4 w-4"></span> Insignia de identidad verificada</li>
+                <li class="flex items-center gap-2"><span class="text-tico-300" data-icono="check" data-clases="h-4 w-4"></span> Seguimiento de ventas y evidencias de pago</li>
+              </ul>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a href="publicar.html" class="btn-verde">Publicar mi primer producto</a>
+                <a href="planes.html" class="btn-claro">Ver planes</a>
+              </div>
+            </div>
+
+            <div class="mx-auto w-full max-w-sm rounded-2xl bg-white/10 p-4 ring-1 ring-white/15 backdrop-blur">
+              <div class="rounded-xl bg-white p-5 text-ink-900">
+                <div class="flex items-center justify-between">
+                  <p class="text-xs font-bold text-ink-500">Resumen del vendedor</p>
+                  <span class="text-tico-600" data-icono="badge-check" data-clases="h-5 w-5"></span>
+                </div>
+                <p class="mt-3 text-2xl font-extrabold">₡1.245.000</p>
+                <p class="text-xs text-ink-500">Ventas de los últimos 30 días</p>
+                <div class="mt-5 flex h-24 items-end gap-2" aria-hidden="true">
+                  <span class="w-full rounded-t bg-brand-100" style="height: 35%"></span>
+                  <span class="w-full rounded-t bg-brand-200" style="height: 55%"></span>
+                  <span class="w-full rounded-t bg-brand-300" style="height: 45%"></span>
+                  <span class="w-full rounded-t bg-brand-400" style="height: 70%"></span>
+                  <span class="w-full rounded-t bg-brand-500" style="height: 60%"></span>
+                  <span class="w-full rounded-t bg-tico-500" style="height: 90%"></span>
+                </div>
+                <div class="mt-4 flex items-center justify-between rounded-lg bg-tico-50 px-3 py-2 text-xs font-semibold text-tico-700">
+                  <span>Reputación</span>
+                  <span class="flex items-center gap-1"><span data-icono="star" data-clases="h-3.5 w-3.5"></span> 4.9 de 5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-50/70 py-16 sm:py-20">
+      <div class="contenedor">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="antetitulo">Primeras impresiones</p>
+          <h2 class="titulo-seccion">Lo que dicen los usuarios</h2>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <figure class="tarjeta flex h-full flex-col p-6">
+            <div class="flex gap-0.5 text-amber-400" aria-label="5 de 5 estrellas">
+              <span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span>
+            </div>
+            <blockquote class="mt-4 flex-1 text-sm leading-relaxed text-ink-700">“Pude revisar la reputación del vendedor y guardar el comprobante de pago. Todo quedó registrado.”</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3 border-t border-gray-100 pt-4">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-xs font-bold text-brand-700">AR</span>
+              <div><p class="text-sm font-semibold">Ana Rodríguez</p><p class="text-xs text-ink-500">Compradora · Heredia</p></div>
+            </figcaption>
+          </figure>
+          <figure class="tarjeta flex h-full flex-col p-6">
+            <div class="flex gap-0.5 text-amber-400" aria-label="5 de 5 estrellas">
+              <span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span>
+            </div>
+            <blockquote class="mt-4 flex-1 text-sm leading-relaxed text-ink-700">“Vendí mi bicicleta en dos semanas. El sello de verificado me ayudó a transmitir confianza.”</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3 border-t border-gray-100 pt-4">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-tico-50 text-xs font-bold text-tico-700">JM</span>
+              <div><p class="text-sm font-semibold">José Méndez</p><p class="text-xs text-ink-500">Vendedor · Cartago</p></div>
+            </figcaption>
+          </figure>
+          <figure class="tarjeta flex h-full flex-col p-6">
+            <div class="flex gap-0.5 text-amber-400" aria-label="5 de 5 estrellas">
+              <span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span>
+            </div>
+            <blockquote class="mt-4 flex-1 text-sm leading-relaxed text-ink-700">“El seguimiento del paquete me dio tranquilidad: sabía exactamente cuándo iba a llegar.”</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3 border-t border-gray-100 pt-4">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-700">KV</span>
+              <div><p class="text-sm font-semibold">Karla Vargas</p><p class="text-xs text-ink-500">Compradora · San José</p></div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="contenedor">
+        <div class="flex flex-col items-start justify-between gap-4 rounded-2xl border border-tico-100 bg-tico-50/60 px-6 py-5 sm:flex-row sm:items-center">
+          <div class="flex items-center gap-3">
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-tico-700 shadow-sm"><span data-icono="receipt" data-clases="h-5 w-5"></span></span>
+            <div>
+              <p class="text-sm font-bold text-ink-900">Pagos por transferencia y SINPE Móvil</p>
+              <p class="text-xs text-ink-500">Ambos métodos se respaldan con evidencia. La verificación automática estará disponible próximamente.</p>
+            </div>
+          </div>
+          <span class="sello bg-white text-tico-700 ring-1 ring-tico-100">Con evidencia</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-brand-950 text-brand-100">
+    <div class="contenedor grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-3">
+          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1">
+            <img src="assets/img/logo-icono.png" alt="" width="685" height="540" class="h-full w-auto">
+          </span>
+          <span class="text-xl font-extrabold tracking-tight"><span class="text-white">Tico</span><span class="text-tico-400">Market</span></span>
+        </div>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-brand-200">Compra y vende seguro en Costa Rica. Verificación, reputación y seguimiento en cada transacción.</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-[11px] font-semibold">
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">SINPE Móvil</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">Transferencia bancaria</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">Evidencia de pago</span>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">Explorar</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="catalogo.html" class="transition hover:text-white">Catálogo</a></li>
+          <li><a href="publicar.html" class="transition hover:text-white">Publicar producto</a></li>
+          <li><a href="planes.html" class="transition hover:text-white">Planes y verificación</a></li>
+          <li><a href="vendedor.html" class="transition hover:text-white">Perfil de vendedor</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">Confianza</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="seguridad.html" class="transition hover:text-white">Cómo funciona</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Verificación de identidad</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Evidencias de pago</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Consejos de seguridad</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">TicoMarket</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="nosotros.html" class="transition hover:text-white">Sobre nosotros</a></li>
+          <li><a href="nosotros.html" class="transition hover:text-white">Misión y visión</a></li>
+          <li><a href="planes.html#preguntas" class="transition hover:text-white">Preguntas frecuentes</a></li>
+          <li><a href="mailto:hola@ticomarket.cr" class="transition hover:text-white">hola@ticomarket.cr</a></li>
+        </ul>
+        <p class="mt-4 text-xs text-brand-300">San José, Costa Rica</p>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="contenedor flex flex-col items-center justify-between gap-3 py-5 text-xs text-brand-300 sm:flex-row">
+        <p>© <span data-anio>2026</span> TicoMarket. Hecho en Costa Rica.</p>
+        <div class="flex gap-5">
+          <a href="#" class="transition hover:text-white">Términos</a>
+          <a href="#" class="transition hover:text-white">Privacidad</a>
+          <a href="#" class="transition hover:text-white">Cookies</a>
+        </div>
+      </div>
+    </div>
+    <div class="h-1.5 w-full" style="background: linear-gradient(90deg, #0B4EA2 0 33%, #FFFFFF 33% 66%, #CE1126 66% 100%)"></div>
+  </footer>
+
+  <script src="assets/js/datos.js"></script>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

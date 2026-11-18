@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>María Jiménez — Vendedora en TicoMarket</title>
+  <meta name="description" content="Perfil de María Jiménez en TicoMarket: vendedora verificada de tecnología y accesorios en San José, Costa Rica. Reputación, publicaciones y reseñas.">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="assets/css/fuentes.css">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body class="bg-white">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-brand-700 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Saltar al contenido</a>
+
+  <header id="cabecera" class="sticky top-0 z-40 border-b border-gray-100 bg-white/90 backdrop-blur transition-shadow">
+    <div class="contenedor flex h-20 items-center gap-4">
+      <a href="index.html" class="flex shrink-0 items-center gap-2.5" aria-label="TicoMarket, ir al inicio">
+        <img src="assets/img/logo-icono.png" alt="" width="685" height="540" class="h-11 w-auto sm:h-12">
+        <span class="text-[24px] font-extrabold leading-none tracking-tight sm:text-[26px]">
+          <span class="text-brand-700">Tico</span><span class="text-tico-500">Market</span>
+        </span>
+      </a>
+
+      <form role="search" class="mx-auto hidden w-full max-w-md lg:block">
+        <label for="busqueda-cabecera" class="sr-only">Buscar productos</label>
+        <div class="relative">
+          <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-400" data-icono="search" data-clases="h-4 w-4"></span>
+          <input id="busqueda-cabecera" type="search" class="campo py-2.5 pl-11 pr-24 text-sm" placeholder="Buscar en TicoMarket">
+          <button type="submit" class="btn-verde absolute right-1.5 top-1/2 -translate-y-1/2 px-4 py-2 text-xs">Buscar</button>
+        </div>
+      </form>
+
+      <nav class="ml-auto hidden items-center gap-5 text-sm font-semibold text-ink-700 xl:flex" aria-label="Navegación principal">
+        <a href="catalogo.html" aria-current="page" class="text-brand-700">Catálogo</a>
+        <a href="seguridad.html" class="transition hover:text-brand-700">Seguridad</a>
+        <a href="planes.html" class="transition hover:text-brand-700">Planes</a>
+        <a href="nosotros.html" class="transition hover:text-brand-700">Nosotros</a>
+      </nav>
+
+      <div class="ml-auto hidden items-center gap-2 md:flex xl:ml-0">
+        <div class="relative" data-menu-usuario>
+          <button type="button" data-boton-usuario class="flex h-11 items-center gap-2 rounded-xl border border-gray-200 bg-white pl-1.5 pr-2.5 text-sm font-semibold text-ink-700 transition hover:border-brand-200 hover:bg-brand-50" aria-expanded="false" aria-controls="menu-usuario" aria-haspopup="true" aria-label="Abrir menú de usuario">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+            <span class="hidden md:inline xl:hidden">María</span>
+            <span data-boton-usuario-icono class="text-ink-400 transition-transform" data-icono="chevron" data-clases="h-4 w-4"></span>
+          </button>
+          <div id="menu-usuario" data-panel-usuario class="absolute right-0 top-full z-50 mt-2 hidden w-64 overflow-hidden rounded-2xl border border-gray-100 bg-white p-2 shadow-flotante">
+            <div class="flex items-center gap-2.5 border-b border-gray-100 px-3 pb-3 pt-2">
+              <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+              <div>
+                <p class="text-sm font-bold text-ink-900">María Jiménez</p>
+                <p class="flex items-center gap-1 text-[11px] font-semibold text-tico-700">
+                  <span data-icono="badge-check" data-clases="h-3 w-3"></span>
+                  Cuenta verificada
+                </p>
+              </div>
+            </div>
+            <nav class="mt-1 flex flex-col text-sm" aria-label="Menú de usuario">
+              <a href="transacciones.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-semibold text-brand-700 transition hover:bg-brand-50">
+                <span data-icono="receipt" data-clases="h-4 w-4"></span>
+                Mi panel de transacciones
+              </a>
+              <a href="vendedor.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-medium text-ink-700 transition hover:bg-gray-50 hover:text-brand-700">
+                <span data-icono="store" data-clases="h-4 w-4 text-ink-400"></span>
+                Mi perfil de vendedor
+              </a>
+              <a href="planes.html" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-medium text-ink-700 transition hover:bg-gray-50 hover:text-brand-700">
+                <span data-icono="sparkles" data-clases="h-4 w-4 text-ink-400"></span>
+                Mis planes
+              </a>
+            </nav>
+            <div class="mt-1 border-t border-gray-100 pt-1">
+              <a href="#" class="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-medium text-ink-500 transition hover:bg-gray-50 hover:text-ink-900">
+                <span data-icono="close" data-clases="h-4 w-4"></span>
+                Cerrar sesión
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="publicar.html" class="btn-verde px-4 py-2.5">
+          <span data-icono="plus" data-clases="h-4 w-4"></span>
+          Publicar
+        </a>
+      </div>
+
+      <button id="btn-menu" type="button" class="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 text-brand-700 transition hover:bg-brand-50 md:ml-0 xl:hidden" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+        <span id="icono-menu" data-icono="menu" data-clases="h-6 w-6"></span>
+        <span id="icono-cerrar" class="hidden" data-icono="close" data-clases="h-6 w-6"></span>
+      </button>
+    </div>
+
+    <div id="menu-movil" class="hidden border-t border-gray-100 bg-white px-4 pb-6 pt-4 xl:hidden">
+      <form role="search" class="mb-4">
+        <label for="busqueda-movil" class="sr-only">Buscar productos</label>
+        <div class="relative">
+          <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-400" data-icono="search" data-clases="h-4 w-4"></span>
+          <input id="busqueda-movil" type="search" class="campo py-3 pl-11" placeholder="Buscar en TicoMarket">
+        </div>
+      </form>
+      <nav class="flex flex-col divide-y divide-gray-100 text-sm font-semibold text-ink-700" aria-label="Navegación móvil">
+        <a href="catalogo.html" aria-current="page" class="py-3 text-brand-700">Catálogo</a>
+        <a href="seguridad.html" class="py-3 hover:text-brand-700">Seguridad</a>
+        <a href="planes.html" class="py-3 hover:text-brand-700">Planes</a>
+        <a href="nosotros.html" class="py-3 hover:text-brand-700">Nosotros</a>
+      </nav>
+      <div class="mt-4">
+        <a href="transacciones.html" class="flex items-center gap-3 rounded-xl border border-gray-200 p-3 transition hover:border-brand-200 hover:bg-brand-50">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-500 text-xs font-extrabold text-white">MJ</span>
+          <span class="flex-1">
+            <span class="block text-sm font-bold text-ink-900">María Jiménez</span>
+            <span class="flex items-center gap-1 text-[11px] font-semibold text-tico-700">
+              <span data-icono="badge-check" data-clases="h-3 w-3"></span>
+              Verificada · Mi panel
+            </span>
+          </span>
+          <span data-icono="chevron-right" data-clases="h-4 w-4 text-ink-400"></span>
+        </a>
+        <div class="mt-3 flex flex-col gap-2">
+          <a href="vendedor.html" aria-current="page" class="btn-contorno">Mi perfil de vendedor</a>
+          <a href="publicar.html" class="btn-verde">Publicar producto</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <div class="border-b border-gray-100">
+      <div class="contenedor py-4">
+        <nav aria-label="Ruta de navegación" class="text-xs font-medium text-ink-500">
+          <ol class="flex flex-wrap items-center gap-2">
+            <li><a href="index.html" class="transition hover:text-brand-700">Inicio</a></li>
+            <li aria-hidden="true" class="text-ink-400">/</li>
+            <li><a href="catalogo.html" class="transition hover:text-brand-700">Catálogo</a></li>
+            <li aria-hidden="true" class="text-ink-400">/</li>
+            <li aria-current="page" class="text-ink-900">María Jiménez</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section class="relative overflow-hidden bg-brand-900">
+      <div class="h-40 bg-gradient-to-r from-brand-800 via-brand-700 to-tico-600 sm:h-48">
+        <div class="contenedor relative h-full">
+          <span class="pointer-events-none absolute -right-10 -top-12 h-48 w-48 rounded-full bg-white/10"></span>
+          <span class="pointer-events-none absolute right-28 top-10 h-24 w-24 rounded-full bg-tico-400/20"></span>
+          <span class="pointer-events-none absolute -bottom-20 left-1/3 h-48 w-48 rounded-full bg-white/5"></span>
+        </div>
+      </div>
+
+      <div class="contenedor">
+        <div class="relative -mt-16 rounded-3xl border border-gray-100 bg-white p-5 shadow-flotante sm:p-6">
+          <div class="flex flex-col gap-5 lg:flex-row lg:items-start">
+            <span class="flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl bg-gradient-to-br from-brand-700 to-brand-500 text-3xl font-extrabold text-white ring-4 ring-white shadow-lg">MJ</span>
+
+            <div class="min-w-0 flex-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <h1 class="text-2xl font-extrabold tracking-tight text-ink-900 sm:text-3xl">María Jiménez</h1>
+                <span class="sello bg-tico-50 text-tico-700"><span data-icono="badge-check" data-clases="h-3.5 w-3.5"></span> Verificada</span>
+                <span class="sello bg-amber-50 text-amber-700"><span data-icono="sparkles" data-clases="h-3.5 w-3.5"></span> Premium</span>
+              </div>
+              <p class="mt-1 text-sm text-ink-500">Tecnología y accesorios · San José, Costa Rica</p>
+              <div class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs text-ink-500">
+                <a href="#resenas" data-tab-link="resenas" class="flex items-center gap-1 font-semibold text-ink-700 transition hover:text-brand-700">
+                  <span data-icono-relleno="star" data-clases="h-3.5 w-3.5 text-amber-400"></span> 4.9
+                  <span class="font-normal text-ink-500">(132 reseñas)</span>
+                </a>
+                <span class="flex items-center gap-1"><span data-icono="clock" data-clases="h-3.5 w-3.5"></span> Responde en 2 h</span>
+                <span class="flex items-center gap-1"><span data-icono="calendar" data-clases="h-3.5 w-3.5"></span> Miembro desde marzo 2024</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 lg:justify-end">
+              <button id="btn-seguir" type="button" class="btn-verde px-5 py-2.5 text-xs" aria-pressed="false">Seguir</button>
+              <a href="#" class="btn-contorno px-4 py-2.5 text-xs"><span data-icono="chat" data-clases="h-4 w-4"></span> Contactar</a>
+              <button type="button" class="btn-contorno px-3 py-2.5" aria-label="Compartir perfil"><span data-icono="share" data-clases="h-4 w-4"></span></button>
+            </div>
+          </div>
+
+          <div class="mt-5 grid grid-cols-2 gap-4 border-t border-gray-100 pt-5 sm:grid-cols-4">
+            <div>
+              <p class="text-xl font-extrabold tracking-tight text-ink-900">132</p>
+              <p class="text-xs text-ink-500">Ventas completadas</p>
+            </div>
+            <div>
+              <p class="flex items-center gap-1 text-xl font-extrabold tracking-tight text-ink-900"><span data-icono-relleno="star" data-clases="h-4 w-4 text-amber-400"></span> 4.9</p>
+              <p class="text-xs text-ink-500">Calificación promedio</p>
+            </div>
+            <div>
+              <p class="text-xl font-extrabold tracking-tight text-ink-900">2 h</p>
+              <p class="text-xs text-ink-500">Tiempo de respuesta</p>
+            </div>
+            <div>
+              <p class="text-xl font-extrabold tracking-tight text-ink-900">3</p>
+              <p class="text-xs text-ink-500">Publicaciones activas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-8 sm:py-10">
+      <div class="contenedor">
+        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] xl:gap-10">
+          <div id="resenas" class="scroll-mt-28">
+            <div class="border-b border-gray-200">
+              <div role="tablist" aria-label="Información del vendedor" class="flex gap-6 overflow-x-auto">
+                <button id="tab-publicaciones" type="button" role="tab" aria-selected="true" aria-controls="panel-publicaciones" data-tab="publicaciones" class="-mb-px shrink-0 border-b-2 border-brand-700 px-1 pb-4 pt-2 text-sm font-semibold text-brand-700 transition">Publicaciones</button>
+                <button id="tab-resenas" type="button" role="tab" aria-selected="false" aria-controls="panel-resenas" data-tab="resenas" class="-mb-px flex shrink-0 items-center gap-1.5 border-b-2 border-transparent px-1 pb-4 pt-2 text-sm font-semibold text-ink-500 transition hover:text-ink-900">
+                  Reseñas <span class="rounded-full bg-gray-100 px-1.5 py-0.5 text-[10px] font-bold text-ink-500">132</span>
+                </button>
+                <button id="tab-informacion" type="button" role="tab" aria-selected="false" aria-controls="panel-informacion" data-tab="informacion" class="-mb-px shrink-0 border-b-2 border-transparent px-1 pb-4 pt-2 text-sm font-semibold text-ink-500 transition hover:text-ink-900">Información</button>
+              </div>
+            </div>
+
+            <div id="panel-publicaciones" role="tabpanel" aria-labelledby="tab-publicaciones" data-panel="publicaciones" class="pt-6">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <p class="text-sm text-ink-500"><span class="font-bold text-ink-900">3</span> publicaciones activas</p>
+                <select class="campo w-auto py-2 pl-3 pr-8 text-xs" aria-label="Ordenar publicaciones">
+                  <option>Más recientes</option>
+                  <option>Menor precio</option>
+                  <option>Mayor precio</option>
+                </select>
+              </div>
+              <div data-lista="productos" data-ids="p1,p6,p11" class="mt-5 grid gap-5 sm:grid-cols-2 xl:grid-cols-3"></div>
+
+              <div class="mt-6 rounded-2xl border border-dashed border-gray-300 bg-gray-50/60 p-5 text-center">
+                <p class="text-sm font-bold text-ink-900">¿Buscas algo más de María?</p>
+                <p class="mt-1 text-xs leading-relaxed text-ink-500">Puedes contactarla para consultar por productos que aún no ha publicado.</p>
+                <a href="#" class="enlace mt-2 inline-flex items-center gap-1 text-xs">Enviar un mensaje <span data-icono="chat" data-clases="h-3.5 w-3.5"></span></a>
+              </div>
+            </div>
+
+            <div id="panel-resenas" role="tabpanel" aria-labelledby="tab-resenas" data-panel="resenas" class="hidden pt-6">
+              <div class="grid gap-6 lg:grid-cols-[260px_minmax(0,1fr)]">
+                <div class="h-fit rounded-2xl border border-gray-100 bg-gray-50/70 p-5">
+                  <div class="flex items-end gap-3">
+                    <p class="text-4xl font-extrabold tracking-tight text-ink-900">4.9</p>
+                    <div class="pb-1">
+                      <div class="flex gap-0.5 text-amber-400" aria-label="4.9 de 5 estrellas">
+                        <span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span>
+                      </div>
+                      <p class="mt-1 text-xs text-ink-500">132 reseñas verificadas</p>
+                    </div>
+                  </div>
+                  <div class="mt-4 space-y-2">
+                    <div class="flex items-center gap-2 text-xs text-ink-500">
+                      <span class="w-6">5★</span>
+                      <div class="h-2 flex-1 overflow-hidden rounded-full bg-gray-200"><div class="h-2 rounded-full bg-amber-400" style="width: 82%"></div></div>
+                      <span class="w-8 text-right">82%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-ink-500">
+                      <span class="w-6">4★</span>
+                      <div class="h-2 flex-1 overflow-hidden rounded-full bg-gray-200"><div class="h-2 rounded-full bg-amber-400" style="width: 14%"></div></div>
+                      <span class="w-8 text-right">14%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-ink-500">
+                      <span class="w-6">3★</span>
+                      <div class="h-2 flex-1 overflow-hidden rounded-full bg-gray-200"><div class="h-2 rounded-full bg-amber-400" style="width: 3%"></div></div>
+                      <span class="w-8 text-right">3%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-ink-500">
+                      <span class="w-6">2★</span>
+                      <div class="h-2 flex-1 overflow-hidden rounded-full bg-gray-200"><div class="h-2 rounded-full bg-amber-400" style="width: 1%"></div></div>
+                      <span class="w-8 text-right">1%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-ink-500">
+                      <span class="w-6">1★</span>
+                      <div class="h-2 flex-1 overflow-hidden rounded-full bg-gray-200"><div class="h-2 rounded-full bg-amber-400" style="width: 0%"></div></div>
+                      <span class="w-8 text-right">0%</span>
+                    </div>
+                  </div>
+                  <div class="mt-5 rounded-xl bg-white p-3 text-xs">
+                    <p class="font-semibold text-ink-900">98% responde en menos de 2 h</p>
+                    <p class="mt-1 text-ink-500">Buen indicador para compradores nuevos.</p>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <article class="rounded-2xl border border-gray-100 bg-white p-5">
+                    <div class="flex flex-wrap items-start justify-between gap-3">
+                      <div class="flex items-center gap-3">
+                        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-xs font-bold text-brand-700">AQ</span>
+                        <div><p class="text-sm font-bold text-ink-900">Andrés Quesada</p><p class="text-[11px] text-ink-400">Hace 2 semanas</p></div>
+                      </div>
+                      <span class="sello bg-tico-50 text-tico-700"><span data-icono="badge-check" data-clases="h-3.5 w-3.5"></span> Compra verificada</span>
+                    </div>
+                    <div class="mt-3 flex gap-0.5 text-amber-400" aria-label="5 de 5 estrellas">
+                      <span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span>
+                    </div>
+                    <p class="mt-2 text-sm leading-relaxed text-ink-700">“Compré la laptop y todo excelente. María me dejó probarla antes de pagar y me explicó el estado de la batería.”</p>
+                    <p class="mt-3 text-[11px] text-ink-400">Laptop Lenovo IdeaPad 3</p>
+                  </article>
+
+                  <article class="rounded-2xl border border-gray-100 bg-white p-5">
+                    <div class="flex flex-wrap items-start justify-between gap-3">
+                      <div class="flex items-center gap-3">
+                        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-tico-50 text-xs font-bold text-tico-700">SR</span>
+                        <div><p class="text-sm font-bold text-ink-900">Sofía Ramírez</p><p class="text-[11px] text-ink-400">Hace 1 mes</p></div>
+                      </div>
+                      <span class="sello bg-tico-50 text-tico-700"><span data-icono="badge-check" data-clases="h-3.5 w-3.5"></span> Compra verificada</span>
+                    </div>
+                    <div class="mt-3 flex gap-0.5 text-amber-400" aria-label="5 de 5 estrellas">
+                      <span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span>
+                    </div>
+                    <p class="mt-2 text-sm leading-relaxed text-ink-700">“La guitarra llegó muy bien empacada y sonaba tal como esperaba. La comunicación fue rápida y clara.”</p>
+                    <p class="mt-3 text-[11px] text-ink-400">Guitarra acústica Yamaha F310</p>
+                  </article>
+
+                  <article class="rounded-2xl border border-gray-100 bg-white p-5">
+                    <div class="flex flex-wrap items-start justify-between gap-3">
+                      <div class="flex items-center gap-3">
+                        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-700">LF</span>
+                        <div><p class="text-sm font-bold text-ink-900">Luis Fallas</p><p class="text-[11px] text-ink-400">Hace 2 meses</p></div>
+                      </div>
+                      <span class="sello bg-tico-50 text-tico-700"><span data-icono="badge-check" data-clases="h-3.5 w-3.5"></span> Compra verificada</span>
+                    </div>
+                    <div class="mt-3 flex gap-0.5 text-amber-400" aria-label="4 de 5 estrellas">
+                      <span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span data-icono-relleno="star" data-clases="h-4 w-4"></span><span class="text-gray-300"><span data-icono-relleno="star" data-clases="h-4 w-4"></span></span>
+                    </div>
+                    <p class="mt-2 text-sm leading-relaxed text-ink-700">“Muy buena comunicación. El producto coincidió con la descripción y la entrega fue puntual.”</p>
+                    <p class="mt-3 text-[11px] text-ink-400">Alimento premium para perro</p>
+                  </article>
+
+                  <button type="button" class="btn-contorno w-full py-3 text-xs">Ver las 132 reseñas</button>
+                  <p class="text-center text-[11px] text-ink-400">Las reseñas son de demostración para este prototipo.</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="panel-informacion" role="tabpanel" aria-labelledby="tab-informacion" data-panel="informacion" class="hidden pt-6">
+              <div class="space-y-6">
+                <div>
+                  <h2 class="text-lg font-bold text-ink-900">Sobre María</h2>
+                  <p class="mt-2 text-sm leading-relaxed text-ink-700">
+                    Vendo tecnología y accesorios nuevos y usados desde 2024. Me enfoco en describir cada producto
+                    con honestidad, responder rápido y coordinar entregas que den tranquilidad a ambas partes.
+                  </p>
+                </div>
+
+                <dl class="grid gap-4 rounded-2xl border border-gray-100 bg-gray-50/60 p-5 sm:grid-cols-2">
+                  <div><dt class="text-[10px] font-bold uppercase tracking-[0.12em] text-ink-400">Ubicación</dt><dd class="mt-1 flex items-center gap-1.5 text-sm font-semibold text-ink-700"><span data-icono="map-pin" data-clases="h-4 w-4 text-brand-600"></span> San José, Costa Rica</dd></div>
+                  <div><dt class="text-[10px] font-bold uppercase tracking-[0.12em] text-ink-400">Miembro desde</dt><dd class="mt-1 flex items-center gap-1.5 text-sm font-semibold text-ink-700"><span data-icono="calendar" data-clases="h-4 w-4 text-brand-600"></span> Marzo 2024</dd></div>
+                  <div><dt class="text-[10px] font-bold uppercase tracking-[0.12em] text-ink-400">Tiempo de respuesta</dt><dd class="mt-1 flex items-center gap-1.5 text-sm font-semibold text-ink-700"><span data-icono="clock" data-clases="h-4 w-4 text-brand-600"></span> 2 horas</dd></div>
+                  <div><dt class="text-[10px] font-bold uppercase tracking-[0.12em] text-ink-400">Ventas completadas</dt><dd class="mt-1 flex items-center gap-1.5 text-sm font-semibold text-ink-700"><span data-icono="store" data-clases="h-4 w-4 text-brand-600"></span> 132</dd></div>
+                </dl>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div class="rounded-2xl border border-gray-100 p-5">
+                    <h3 class="flex items-center gap-2 text-sm font-bold text-ink-900"><span data-icono="truck" data-clases="h-4 w-4 text-brand-600"></span> Entrega</h3>
+                    <ul class="mt-3 space-y-2 text-xs leading-relaxed text-ink-600">
+                      <li class="flex gap-2"><span class="mt-0.5 text-tico-600"><span data-icono="check" data-clases="h-3.5 w-3.5"></span></span> Entrega en San José centro.</li>
+                      <li class="flex gap-2"><span class="mt-0.5 text-tico-600"><span data-icono="check" data-clases="h-3.5 w-3.5"></span></span> Envío con seguimiento a todo el país.</li>
+                      <li class="flex gap-2"><span class="mt-0.5 text-tico-600"><span data-icono="check" data-clases="h-3.5 w-3.5"></span></span> Se puede probar antes de pagar.</li>
+                    </ul>
+                  </div>
+                  <div class="rounded-2xl border border-gray-100 p-5">
+                    <h3 class="flex items-center gap-2 text-sm font-bold text-ink-900"><span data-icono="receipt" data-clases="h-4 w-4 text-brand-600"></span> Pagos</h3>
+                    <ul class="mt-3 space-y-2 text-xs leading-relaxed text-ink-600">
+                      <li class="flex gap-2"><span class="mt-0.5 text-tico-600"><span data-icono="check" data-clases="h-3.5 w-3.5"></span></span> Transferencia bancaria.</li>
+                      <li class="flex gap-2"><span class="mt-0.5 text-tico-600"><span data-icono="check" data-clases="h-3.5 w-3.5"></span></span> SINPE Móvil.</li>
+                      <li class="flex gap-2"><span class="mt-0.5 text-tico-600"><span data-icono="check" data-clases="h-3.5 w-3.5"></span></span> Comprobante de pago en cada transacción.</li>
+                    </ul>
+                    <p class="mt-3 text-[11px] leading-relaxed text-ink-400">La verificación automática de pagos estará disponible próximamente.</p>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl border border-amber-100 bg-amber-50/60 p-5">
+                  <h3 class="flex items-center gap-2 text-sm font-bold text-ink-900"><span data-icono="info" data-clases="h-4 w-4 text-amber-600"></span> Políticas de la vendedora</h3>
+                  <p class="mt-2 text-xs leading-relaxed text-ink-700">Acepta devoluciones dentro de los primeros 3 días si el producto no coincide con la descripción. Coordina siempre la entrega y el pago dentro de TicoMarket.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="space-y-4">
+            <div class="rounded-2xl border border-tico-100 bg-tico-50/60 p-5">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-tico-700 shadow-sm"><span data-icono="shield" data-clases="h-5 w-5"></span></span>
+              <h2 class="mt-3 text-sm font-bold text-ink-900">Por qué comprar con María</h2>
+              <ul class="mt-3 space-y-3 text-xs leading-relaxed text-ink-600">
+                <li class="flex gap-2.5"><span class="mt-0.5 text-tico-600"><span data-icono="badge-check" data-clases="h-4 w-4"></span></span><span><span class="block font-semibold text-ink-900">Identidad verificada</span>Cédula y datos de contacto confirmados.</span></li>
+                <li class="flex gap-2.5"><span class="mt-0.5 text-tico-600"><span data-icono="star" data-clases="h-4 w-4"></span></span><span><span class="block font-semibold text-ink-900">Historial comprobado</span>132 ventas y 4.9 de calificación.</span></li>
+                <li class="flex gap-2.5"><span class="mt-0.5 text-tico-600"><span data-icono="clock" data-clases="h-4 w-4"></span></span><span><span class="block font-semibold text-ink-900">Respuesta rápida</span>Responde en menos de 2 horas.</span></li>
+                <li class="flex gap-2.5"><span class="mt-0.5 text-tico-600"><span data-icono="sparkles" data-clases="h-4 w-4"></span></span><span><span class="block font-semibold text-ink-900">Vendedora Premium</span>Destacada por su reputación.</span></li>
+              </ul>
+            </div>
+
+            <div class="tarjeta p-5">
+              <h2 class="text-sm font-bold text-ink-900">Insignias</h2>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="sello bg-tico-50 text-tico-700"><span data-icono="badge-check" data-clases="h-3.5 w-3.5"></span> Identidad verificada</span>
+                <span class="sello bg-amber-50 text-amber-700"><span data-icono="sparkles" data-clases="h-3.5 w-3.5"></span> Premium</span>
+                <span class="sello bg-brand-50 text-brand-700"><span data-icono="clock" data-clases="h-3.5 w-3.5"></span> Respuesta rápida</span>
+                <span class="sello bg-tico-50 text-tico-700"><span data-icono="store" data-clases="h-3.5 w-3.5"></span> 100+ ventas</span>
+              </div>
+            </div>
+
+            <div class="tarjeta p-5">
+              <h2 class="text-sm font-bold text-ink-900">Compra protegida</h2>
+              <p class="mt-1 text-xs leading-relaxed text-ink-500">Revisa el producto antes de pagar, guarda el comprobante y no compartas códigos de verificación.</p>
+              <a href="seguridad.html" class="enlace mt-3 inline-flex items-center gap-1 text-xs">Cómo protegemos tu compra <span data-icono="arrow" data-clases="h-3.5 w-3.5"></span></a>
+            </div>
+
+            <a href="#" class="flex items-center justify-center gap-1.5 text-[11px] font-semibold text-ink-500 transition hover:text-brand-700"><span data-icono="flag" data-clases="h-3.5 w-3.5"></span> Reportar este perfil</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-brand-950 text-brand-100">
+    <div class="contenedor grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-3">
+          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1">
+            <img src="assets/img/logo-icono.png" alt="" width="685" height="540" class="h-full w-auto">
+          </span>
+          <span class="text-xl font-extrabold tracking-tight"><span class="text-white">Tico</span><span class="text-tico-400">Market</span></span>
+        </div>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-brand-200">Compra y vende seguro en Costa Rica. Verificación, reputación y seguimiento en cada transacción.</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-[11px] font-semibold">
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">SINPE Móvil</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">Transferencia bancaria</span>
+          <span class="rounded-full border border-white/15 px-3 py-1 text-brand-100">Evidencia de pago</span>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">Explorar</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="catalogo.html" class="transition hover:text-white">Catálogo</a></li>
+          <li><a href="publicar.html" class="transition hover:text-white">Publicar producto</a></li>
+          <li><a href="planes.html" class="transition hover:text-white">Planes y verificación</a></li>
+          <li><a href="vendedor.html" class="transition hover:text-white">Perfil de vendedor</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">Confianza</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="seguridad.html" class="transition hover:text-white">Cómo funciona</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Verificación de identidad</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Evidencias de pago</a></li>
+          <li><a href="seguridad.html" class="transition hover:text-white">Consejos de seguridad</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white">TicoMarket</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="nosotros.html" class="transition hover:text-white">Sobre nosotros</a></li>
+          <li><a href="nosotros.html" class="transition hover:text-white">Misión y visión</a></li>
+          <li><a href="planes.html#preguntas" class="transition hover:text-white">Preguntas frecuentes</a></li>
+          <li><a href="mailto:hola@ticomarket.cr" class="transition hover:text-white">hola@ticomarket.cr</a></li>
+        </ul>
+        <p class="mt-4 text-xs text-brand-300">San José, Costa Rica</p>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="contenedor flex flex-col items-center justify-between gap-3 py-5 text-xs text-brand-300 sm:flex-row">
+        <p>© <span data-anio>2026</span> TicoMarket. Hecho en Costa Rica.</p>
+        <div class="flex gap-5">
+          <a href="#" class="transition hover:text-white">Términos</a>
+          <a href="#" class="transition hover:text-white">Privacidad</a>
+          <a href="#" class="transition hover:text-white">Cookies</a>
+        </div>
+      </div>
+    </div>
+    <div class="h-1.5 w-full" style="background: linear-gradient(90deg, #0B4EA2 0 33%, #FFFFFF 33% 66%, #CE1126 66% 100%)"></div>
+  </footer>
+
+  <script src="assets/js/datos.js"></script>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/paginas.js"></script>
+</body>
+</html>
