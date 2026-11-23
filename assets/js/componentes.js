@@ -67,6 +67,8 @@
     flag: '<path d="M5 21V4h9l1 2h5v8h-5l-1-2H5"/>',
     wallet: '<rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M16.5 14.5h.01"/>',
     building: '<path d="M4 21V4h10v17M14 9h6v12"/><path d="M7.5 8h3M7.5 12h3M7.5 16h3M17 13h.01M17 17h.01"/>',
+    bag: '<path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>',
+    wrench: '<path d="M14.5 6.5a4 4 0 0 0-5.2 5.2L4 17l3 3 5.3-5.3a4 4 0 0 0 5.2-5.2l-2.6 2.6-2.9-2.9z"/>',
     download: '<path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5"/><path d="M4 17v3.5h16V17"/>',
   };
 

@@ -158,6 +158,26 @@
       </div>
     </section>
 
+    <aside aria-label="Publicidad" class="border-b border-gray-100 bg-white">
+      <div class="contenedor py-4">
+        <div class="flex flex-col gap-3 rounded-2xl border border-gray-200 bg-gray-50/60 px-5 py-4 sm:flex-row sm:items-center">
+          <span class="inline-flex w-fit shrink-0 items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-ink-500 ring-1 ring-gray-200">
+            <span data-icono="megaphone" data-clases="h-3 w-3"></span> Publicidad
+          </span>
+          <div class="flex min-w-0 flex-1 items-start gap-3">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+              <span data-icono="wrench" data-clases="h-5 w-5"></span>
+            </span>
+            <div class="min-w-0">
+              <p class="text-sm font-bold text-ink-900">Ferretería El Tornillo <span class="font-medium text-ink-400">· Alajuela</span></p>
+              <p class="text-xs leading-relaxed text-ink-500">Herramientas y suministros para tu casa o negocio. Entrega en el GAM.</p>
+            </div>
+          </div>
+          <a href="#resultados-productos" class="btn-contorno shrink-0 px-4 py-2 text-xs">Ver ofertas <span data-icono="arrow" data-clases="h-3.5 w-3.5"></span></a>
+        </div>
+      </div>
+    </aside>
+
     <section class="py-8 sm:py-10">
       <div class="contenedor">
         <div class="mb-4 flex items-center justify-between gap-3 lg:hidden">
@@ -350,7 +370,7 @@
               </div>
             </div>
 
-            <div id="resultados-productos" data-lista="productos" data-vista="grilla" class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3"></div>
+            <div id="resultados-productos" data-lista="productos" data-vista="grilla" class="mt-6 grid scroll-mt-28 grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3"></div>
 
             <nav class="mt-10 flex flex-wrap items-center justify-center gap-1.5" aria-label="Paginación del catálogo">
               <span class="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-ink-400 opacity-50" aria-disabled="true">

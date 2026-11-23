@@ -207,10 +207,16 @@
               </p>
             </div>
 
-            <a href="#" class="btn-verde mt-4 w-full py-4">
-              <span data-icono="chat" data-clases="h-5 w-5"></span>
-              Contactar al vendedor
-            </a>
+            <div class="mt-4 grid gap-2 sm:grid-cols-[1.1fr,0.9fr]">
+              <button id="btn-comprar" type="button" class="btn-verde py-4">
+                <span data-icono="bag" data-clases="h-5 w-5"></span>
+                Comprar ahora
+              </button>
+              <a href="#" class="btn-contorno py-4">
+                <span data-icono="chat" data-clases="h-5 w-5"></span>
+                Contactar al vendedor
+              </a>
+            </div>
             <div class="mt-2 grid grid-cols-2 gap-2">
               <button type="button" class="btn-contorno py-3">
                 <span data-icono="heart" data-clases="h-4 w-4"></span> Guardar
@@ -443,6 +449,36 @@
               <a href="#" class="btn-contorno mt-3 w-full py-2.5 text-xs"><span data-icono="chat" data-clases="h-4 w-4"></span> Contactar soporte</a>
               <a href="#" class="mt-3 flex items-center justify-center gap-1 text-[11px] font-semibold text-ink-500 transition hover:text-brand-700"><span data-icono="alert" data-clases="h-3.5 w-3.5"></span> Reportar este anuncio</a>
             </div>
+
+            <div role="region" aria-label="Publicidad" class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-tarjeta">
+              <div class="flex items-center justify-between gap-2 border-b border-gray-100 bg-gray-50/70 px-4 py-2">
+                <span class="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.16em] text-ink-500">
+                  <span data-icono="megaphone" data-clases="h-3 w-3"></span> Publicidad
+                </span>
+                <span class="text-[10px] font-medium text-ink-400">Producto recomendado</span>
+              </div>
+              <a href="producto.html" class="group block p-4">
+                <div class="flex gap-3">
+                  <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-rose-50 to-rose-100 text-rose-500">
+                    <span data-icono="shoe" data-clases="h-8 w-8"></span>
+                  </span>
+                  <div class="min-w-0">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.12em] text-brand-700">Moda</p>
+                    <p class="mt-0.5 text-sm font-bold leading-snug text-ink-900 transition group-hover:text-brand-700">Tenis deportivos Nike Air Zoom</p>
+                    <p class="mt-1 text-base font-extrabold tracking-tight text-ink-900">₡48.000</p>
+                  </div>
+                </div>
+                <div class="mt-3 flex items-center justify-between border-t border-gray-100 pt-3 text-[11px]">
+                  <span class="flex items-center gap-1 font-semibold text-ink-700">
+                    <span data-icono-relleno="star" data-clases="h-3.5 w-3.5 text-amber-400"></span>
+                    4.5 <span class="font-normal text-ink-400">(17)</span>
+                  </span>
+                  <span class="inline-flex items-center gap-1 font-semibold text-brand-700">
+                    Ver producto <span data-icono="arrow" data-clases="h-3.5 w-3.5"></span>
+                  </span>
+                </div>
+              </a>
+            </div>
           </aside>
         </div>
 
@@ -530,6 +566,140 @@
     </div>
     <div class="h-1.5 w-full" style="background: linear-gradient(90deg, #0B4EA2 0 33%, #FFFFFF 33% 66%, #CE1126 66% 100%)"></div>
   </footer>
+
+  <div id="modal-compra" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-compra-titulo">
+    <div id="modal-compra-fondo" class="absolute inset-0 bg-ink-900/50 backdrop-blur-sm"></div>
+    <div class="absolute inset-y-0 right-0 flex w-full max-w-md flex-col bg-white shadow-flotante">
+      <div class="flex items-start justify-between gap-4 border-b border-gray-100 p-5">
+        <div>
+          <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-ink-400">Compra protegida</p>
+          <h2 id="modal-compra-titulo" class="mt-0.5 text-lg font-extrabold tracking-tight text-ink-900">Comprar ahora</h2>
+        </div>
+        <button id="cerrar-compra" type="button" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-gray-200 text-ink-500 transition hover:bg-gray-50 hover:text-ink-900" aria-label="Cerrar compra">
+          <span data-icono="close" data-clases="h-5 w-5"></span>
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto p-5">
+        <div data-compra-paso="1">
+          <div class="flex gap-3 rounded-2xl border border-gray-100 bg-gray-50/70 p-3">
+            <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white text-brand-600 shadow-sm">
+              <span data-icono="laptop" data-clases="h-7 w-7"></span>
+            </span>
+            <div class="min-w-0">
+              <p class="text-sm font-bold leading-snug text-ink-900">Laptop Lenovo IdeaPad 3, 15 pulgadas</p>
+              <p class="mt-0.5 text-xs text-ink-500">María Jiménez · San Pedro, San José</p>
+              <p class="mt-1 text-lg font-extrabold tracking-tight text-ink-900">₡285.000</p>
+            </div>
+          </div>
+
+          <fieldset class="mt-5">
+            <legend class="text-[11px] font-bold uppercase tracking-[0.12em] text-ink-500">Entrega</legend>
+            <div class="mt-2 space-y-2">
+              <label data-opcion-compra class="flex cursor-pointer gap-3 rounded-xl border border-brand-200 bg-brand-50/50 p-3 ring-1 ring-brand-100">
+                <input type="radio" name="entrega-compra" value="Coordinar con la vendedora" class="mt-0.5 h-4 w-4 shrink-0 accent-brand-700" checked>
+                <span>
+                  <span class="block text-sm font-bold text-ink-900">Coordinar con la vendedora</span>
+                  <span class="mt-0.5 block text-xs leading-relaxed text-ink-500">San Pedro, San José. Puedes revisar el producto antes de pagar.</span>
+                </span>
+              </label>
+              <label data-opcion-compra class="flex cursor-pointer gap-3 rounded-xl border border-gray-200 bg-white p-3 transition hover:border-brand-200">
+                <input type="radio" name="entrega-compra" value="Envío con seguimiento" class="mt-0.5 h-4 w-4 shrink-0 accent-brand-700">
+                <span>
+                  <span class="block text-sm font-bold text-ink-900">Envío con seguimiento</span>
+                  <span class="mt-0.5 block text-xs leading-relaxed text-ink-500">Dentro del GAM. El costo y la fecha se acuerdan por chat.</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="mt-5">
+            <legend class="text-[11px] font-bold uppercase tracking-[0.12em] text-ink-500">Método de pago</legend>
+            <div class="mt-2 space-y-2">
+              <label data-opcion-compra class="flex cursor-pointer gap-3 rounded-xl border border-brand-200 bg-brand-50/50 p-3 ring-1 ring-brand-100">
+                <input type="radio" name="pago-compra" value="SINPE Móvil" data-metodo="SINPE Móvil" class="mt-0.5 h-4 w-4 shrink-0 accent-brand-700" checked>
+                <span class="flex-1">
+                  <span class="flex items-center justify-between gap-2">
+                    <span class="text-sm font-bold text-ink-900">SINPE Móvil</span>
+                    <span class="text-tico-600" data-icono="phone" data-clases="h-5 w-5"></span>
+                  </span>
+                  <span class="mt-0.5 block text-xs leading-relaxed text-ink-500">Envía el comprobante desde tu banco.</span>
+                </span>
+              </label>
+              <label data-opcion-compra class="flex cursor-pointer gap-3 rounded-xl border border-gray-200 bg-white p-3 transition hover:border-brand-200">
+                <input type="radio" name="pago-compra" value="Transferencia bancaria" data-metodo="Transferencia bancaria" class="mt-0.5 h-4 w-4 shrink-0 accent-brand-700">
+                <span class="flex-1">
+                  <span class="flex items-center justify-between gap-2">
+                    <span class="text-sm font-bold text-ink-900">Transferencia bancaria</span>
+                    <span class="text-brand-600" data-icono="building" data-clases="h-5 w-5"></span>
+                  </span>
+                  <span class="mt-0.5 block text-xs leading-relaxed text-ink-500">Transferencia o depósito con comprobante.</span>
+                </span>
+              </label>
+            </div>
+            <p class="mt-2 flex gap-1.5 text-[11px] leading-relaxed text-ink-400">
+              <span class="mt-0.5 shrink-0 text-amber-500" data-icono="alert" data-clases="h-3.5 w-3.5"></span>
+              No se acepta tarjeta. Nunca compartas datos de tarjeta ni códigos de verificación.
+            </p>
+          </fieldset>
+
+          <div class="mt-5 rounded-xl bg-brand-50/70 p-3 text-xs leading-relaxed text-brand-800">
+            La vendedora confirma disponibilidad antes de que pagues. Guarda el comprobante: quedará ligado a tu panel de transacciones.
+          </div>
+        </div>
+
+        <div id="compra-exito" data-compra-paso="2" class="hidden text-center focus-visible:ring-0 focus-visible:ring-offset-0" role="status" aria-live="polite" tabindex="-1">
+          <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-tico-50 text-tico-600">
+            <span data-icono="check" data-clases="h-8 w-8"></span>
+          </span>
+          <h3 class="mt-4 text-xl font-extrabold tracking-tight text-ink-900">Solicitud enviada</h3>
+          <p class="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-ink-500">
+            La vendedora revisará la disponibilidad y coordinará contigo el pago por
+            <span id="compra-metodo" class="font-semibold text-ink-700">SINPE Móvil</span>.
+          </p>
+          <div class="mt-5 rounded-2xl border border-gray-100 bg-gray-50/70 p-4 text-left">
+            <div class="flex items-center justify-between gap-3 text-xs">
+              <span class="text-ink-500">Pedido de demostración</span>
+              <span class="font-bold text-ink-900">TM-10429</span>
+            </div>
+            <div class="mt-2 flex items-center justify-between gap-3 text-xs">
+              <span class="text-ink-500">Total</span>
+              <span class="font-bold text-ink-900">₡285.000</span>
+            </div>
+            <div class="mt-2 flex items-center justify-between gap-3 text-xs">
+              <span class="text-ink-500">Entrega</span>
+              <span id="compra-entrega" class="text-right font-semibold text-ink-700">Coordinar con la vendedora</span>
+            </div>
+          </div>
+          <p class="mt-4 flex items-center justify-center gap-1.5 text-[11px] text-ink-400">
+            <span data-icono="shield" data-clases="h-3.5 w-3.5"></span>
+            El comprobante quedará en tu panel de transacciones.
+          </p>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-100 bg-gray-50 p-5">
+        <div id="acciones-compra">
+          <div class="flex items-center justify-between gap-3">
+            <span class="text-xs font-semibold text-ink-500">Total</span>
+            <span class="text-xl font-extrabold tracking-tight text-ink-900">₡285.000</span>
+          </div>
+          <button id="confirmar-compra" type="button" class="btn-verde mt-3 w-full py-3.5">
+            <span data-icono="bag" data-clases="h-5 w-5"></span>
+            Confirmar compra
+          </button>
+          <p class="mt-2 text-center text-[10px] leading-relaxed text-ink-400">Demostración del prototipo: no se realizará ningún cobro real.</p>
+        </div>
+        <div id="acciones-compra-exito" class="hidden space-y-2">
+          <a href="transacciones.html" class="btn-verde w-full py-3">
+            <span data-icono="receipt" data-clases="h-4 w-4"></span>
+            Ver mi panel de transacciones
+          </a>
+          <button id="cerrar-compra-exito" type="button" class="btn-contorno w-full py-3">Seguir explorando</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="assets/js/datos.js"></script>
   <script src="assets/js/componentes.js"></script>

@@ -378,6 +378,97 @@
     });
   }
 
+  function iniciarOpcionesCompra() {
+    const opciones = document.querySelectorAll('[data-opcion-compra]');
+    if (!opciones.length) return;
+
+    opciones.forEach(function (opcion) {
+      const radio = opcion.querySelector('input[type="radio"]');
+      if (!radio) return;
+
+      radio.addEventListener('change', function () {
+        opciones.forEach(function (otra) {
+          const otroRadio = otra.querySelector('input[type="radio"]');
+          if (!otroRadio || otroRadio.name !== radio.name) return;
+          const activa = otroRadio.checked;
+          otra.classList.toggle('border-brand-200', activa);
+          otra.classList.toggle('bg-brand-50/50', activa);
+          otra.classList.toggle('ring-1', activa);
+          otra.classList.toggle('ring-brand-100', activa);
+          otra.classList.toggle('border-gray-200', !activa);
+          otra.classList.toggle('bg-white', !activa);
+        });
+      });
+    });
+  }
+
+  function iniciarCompra() {
+    const modal = document.getElementById('modal-compra');
+    const botonAbrir = document.getElementById('btn-comprar');
+    const botonCerrar = document.getElementById('cerrar-compra');
+    const fondo = document.getElementById('modal-compra-fondo');
+    const paso1 = document.querySelector('[data-compra-paso="1"]');
+    const paso2 = document.getElementById('compra-exito');
+    const acciones = document.getElementById('acciones-compra');
+    const accionesExito = document.getElementById('acciones-compra-exito');
+    const confirmar = document.getElementById('confirmar-compra');
+    const cerrarExito = document.getElementById('cerrar-compra-exito');
+    const metodo = document.getElementById('compra-metodo');
+    const entregaTexto = document.getElementById('compra-entrega');
+    if (!modal || !botonAbrir) return;
+
+    let ultimoFoco = null;
+
+    function mostrarPaso1() {
+      if (paso1) paso1.classList.remove('hidden');
+      if (paso2) paso2.classList.add('hidden');
+      if (acciones) acciones.classList.remove('hidden');
+      if (accionesExito) accionesExito.classList.add('hidden');
+    }
+
+    function abrir(origen) {
+      ultimoFoco = origen || document.activeElement;
+      mostrarPaso1();
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      if (botonCerrar) botonCerrar.focus();
+    }
+
+    function cerrar() {
+      if (modal.classList.contains('hidden')) return;
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+      if (ultimoFoco && ultimoFoco.focus) ultimoFoco.focus();
+    }
+
+    botonAbrir.addEventListener('click', function () {
+      abrir(botonAbrir);
+    });
+    if (botonCerrar) botonCerrar.addEventListener('click', cerrar);
+    if (fondo) fondo.addEventListener('click', cerrar);
+    if (cerrarExito) cerrarExito.addEventListener('click', cerrar);
+
+    document.addEventListener('keydown', function (evento) {
+      if (evento.key === 'Escape') cerrar();
+    });
+
+    if (confirmar) {
+      confirmar.addEventListener('click', function () {
+        const pago = document.querySelector('input[name="pago-compra"]:checked');
+        const entrega = document.querySelector('input[name="entrega-compra"]:checked');
+
+        if (metodo && pago) metodo.textContent = pago.getAttribute('data-metodo') || pago.value;
+        if (entregaTexto && entrega) entregaTexto.textContent = entrega.value;
+
+        if (paso1) paso1.classList.add('hidden');
+        if (paso2) paso2.classList.remove('hidden');
+        if (acciones) acciones.classList.add('hidden');
+        if (accionesExito) accionesExito.classList.remove('hidden');
+        if (paso2) paso2.focus();
+      });
+    }
+  }
+
   function iniciarSeguir() {
     const boton = document.getElementById('btn-seguir');
     if (!boton) return;
@@ -750,6 +841,8 @@
     iniciarPestanas();
     iniciarPublicacion();
     iniciarEntrega();
+    iniciarOpcionesCompra();
+    iniciarCompra();
     iniciarSeguir();
     iniciarPlanes();
     iniciarAcordeon();

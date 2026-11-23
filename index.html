@@ -298,6 +298,26 @@
       </div>
     </section>
 
+    <aside aria-label="Publicidad" class="border-y border-gray-100 bg-white">
+      <div class="contenedor py-4">
+        <div class="flex flex-col gap-3 rounded-2xl border border-gray-200 bg-gray-50/60 px-5 py-4 sm:flex-row sm:items-center">
+          <span class="inline-flex w-fit shrink-0 items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-ink-500 ring-1 ring-gray-200">
+            <span data-icono="megaphone" data-clases="h-3 w-3"></span> Publicidad
+          </span>
+          <div class="flex min-w-0 flex-1 items-start gap-3">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
+              <span data-icono="coffee" data-clases="h-5 w-5"></span>
+            </span>
+            <div class="min-w-0">
+              <p class="text-sm font-bold text-ink-900">Café Dota <span class="font-medium text-ink-400">· Tarrazú</span></p>
+              <p class="text-xs leading-relaxed text-ink-500">Café de altura tostado esta semana. Envío a todo Costa Rica.</p>
+            </div>
+          </div>
+          <a href="catalogo.html" class="btn-contorno shrink-0 px-4 py-2 text-xs">Ver productos <span data-icono="arrow" data-clases="h-3.5 w-3.5"></span></a>
+        </div>
+      </div>
+    </aside>
+
     <section id="productos" class="bg-gray-50/70 py-16 sm:py-20">
       <div class="contenedor">
         <div class="flex flex-wrap items-end justify-between gap-4">
@@ -422,6 +442,24 @@
             Datos protegidos
           </div>
         </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="recomendados-titulo" class="border-y border-gray-100 bg-gray-50/70 py-16 sm:py-20">
+      <div class="contenedor">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-ink-400">
+              <span data-icono="megaphone" data-clases="h-3.5 w-3.5"></span> Publicidad
+            </p>
+            <h2 id="recomendados-titulo" class="titulo-seccion">Productos recomendados</h2>
+            <p class="mt-2 max-w-xl text-sm text-ink-500">Una selección de productos del sitio que podrían interesarte.</p>
+          </div>
+          <a href="catalogo.html" class="enlace inline-flex items-center gap-1 text-sm">
+            Ver más productos <span data-icono="arrow" data-clases="h-4 w-4"></span>
+          </a>
+        </div>
+        <div data-lista="productos" data-ids="p9,p11,p12,p10" class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"></div>
       </div>
     </section>
 
